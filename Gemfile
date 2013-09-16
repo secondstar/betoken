@@ -33,7 +33,23 @@ group :doc do
 end
 
 ## Customization for this project
-gem "guard", "~> 1.8.3"
+group :development, :test do
+  gem "launchy", "~> 2.3.0"
+  gem "capybara", "~> 2.1.0"
+  gem "rb-fsevent", "~> 0.9.3"
+  gem "guard", "~> 1.8.3"  
+  gem "ruby_gntp", "~> 0.3.4"
+  gem "rr", "~> 1.1.2"
+  gem 'passenger'
+  gem 'guard-minitest'
+  gem 'guard-passenger'
+  gem 'guard-bundler'
+  gem 'rb-inotify' if RUBY_PLATFORM =~ /linux/i
+  gem 'libnotify' if RUBY_PLATFORM =~ /linux/i
+  gem 'activerecord-nulldb-adapter', :git => "git://github.com/avdi/nulldb.git"  
+  gem "database_cleaner", "~> 1.1.1"
+end
+
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
