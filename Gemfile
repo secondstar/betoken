@@ -44,6 +44,7 @@ group :development, :test do
   gem 'guard-minitest'
   gem 'guard-passenger'
   gem 'guard-bundler'
+  gem "guard-coffeescript", "~> 1.3.3"
   gem 'rb-inotify' if RUBY_PLATFORM =~ /linux/i
   gem 'libnotify' if RUBY_PLATFORM =~ /linux/i
   gem 'activerecord-nulldb-adapter', :git => "git://github.com/avdi/nulldb.git"  

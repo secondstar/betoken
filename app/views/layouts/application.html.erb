@@ -1,17 +1,240 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <title>Blog</title>
-  <%= stylesheet_link_tag :all %>
-  <%= javascript_include_tag :defaults %>
-  <%= csrf_meta_tag %>
-</head>
-<body>
-<div class="container">
-  <div class="content 6 columns offset-by-one">
-    <%= yield %>
-  </div>
+<!--[if lt IE 7]> <html class="lt-ie9 lt-ie8 lt-ie7 no-js" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="lt-ie9 lt-ie8 no-js" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="lt-ie9 no-js" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+
+  <head>
+  <meta charset="utf-8">
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+  <meta content="Intridea" property="og:site_name" />	
+  
+  <link href="/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon" />
+
+    <!-- meta tags go here -->
+  <meta name="Description" content="Intridea is an industry leader in Web 2.0 business strategy, and we’re intensely focused on learning about your business needs to help you maximize your company's ROI." />
+
+
+  <title><%= yield(:page_title) %> | Dice Media Group</title>
+  <meta name="description" content="">
+
+  <link rel="alternate" type="application/rss+xml" title="Dice Media Group Company Blog" href="http://feeds.feedburner.com/intridea" />
+  <link rel="stylesheet" href="/assets/stylesheets/18305.css" type="text/css" />
+  <%= stylesheet_link_tag "application" %>
+  <%= javascript_include_tag :all, :cache => true %>
+  <!-- link rel="stylesheet" href="/assets/application-5e30010d1cec0ed728116dc225e9802d.css" type="text/css" media="screen" title="no title" charset="utf-8" -->
+
+<!--[if IE]><link href="/assets/ie-3767ddc91d63fcadb0ad373cacb2e399.css" media="screen" rel="stylesheet" type="text/css" /><![endif]-->
+<!--[if IE 8]><link href="/assets/ie8-636d4f3deea359f80b9ebe555ad954fe.css" media="screen" rel="stylesheet" type="text/css" /><![endif]-->
+<!--[if IE 7]><link href="/assets/ie7-fb9f204200d01b11c66818f80277c71e.css" media="screen" rel="stylesheet" type="text/css" /><![endif]-->
+<!--[if IE 6]><link href="/assets/ie6-147bdbb4d851900f59b45b40ecd16334.css" media="screen" rel="stylesheet" type="text/css" /><![endif]-->
+
+  
+
+  <meta content="authenticity_token" name="csrf-param" />
+<meta content="hFk0o6moQZx2M5+mK5t5EVmSeRG/4npmqh4arnsvxKA=" name="csrf-token" />
+  
+  <!-- get iscroll to work -->
+  <meta name="viewport" content="width=device-width">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+  <!-- start Mixpanel --><script type="text/javascript">(function(c,a){var b,d,h,e;b=c.createElement("script");b.type="text/javascript";b.async=!0;b.src=("https:"===c.location.protocol?"https:":"http:")+'//api.mixpanel.com/site_media/js/api/mixpanel.2.js';d=c.getElementsByTagName("script")[0];d.parentNode.insertBefore(b,d);a._i=[];a.init=function(b,c,f){function d(a,b){var c=b.split(".");2==c.length&&(a=a[c[0]],b=c[1]);a[b]=function(){a.push([b].concat(Array.prototype.slice.call(arguments,0)))}}var g=a;"undefined"!==typeof f?g=
+a[f]=[]:f="mixpanel";g.people=g.people||[];h="disable track track_pageview track_links track_forms register register_once unregister identify name_tag set_config people.set people.increment".split(" ");for(e=0;e<h.length;e++)d(g,h[e]);a._i.push([b,c,f])};a.__SV=1.1;window.mixpanel=a})(document,window.mixpanel||[]);
+mixpanel.init("f76e33f7104bb9e97b3a440b544a4220");</script><!-- end Mixpanel -->
+
+<script type="text/javascript">var NREUMQ=NREUMQ||[];NREUMQ.push(["mark","firstbyte",new Date().getTime()]);</script></head>
+
+
+  <body id="page">
+	
+    <!-- for FB share button -->
+    <div id="fb-root"></div>
+	<div id="main_container">
+    <!--[if lt IE 8]><p class=chromeframe>Your browser is a bit overdue for an tune-up. Please <a href="http://browsehappy.com/">upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
+
+
+    <div data-pjax-container>
+      <div class="nav-wrapper alpha services_index">
+	<select id="hidden_select" style="display:none;"></select>
+	<div class="main-nav alpha hidden-phone">
+	  <hgroup>
+	    <h1 class="logo"><a href="/">Dice Media Group</a></h1>
+	    <h2 class="slogan">Building Better Applications</h2>
+	  </hgroup>
+	  
+	  <nav>
+	    <ul>
+	      <li class='<% if yield(:current_page) == 'home' %>active<% end %>'><a href="/"><span>Home </span><span class='nav_descript'>Welcome to AwesomeTown</span></a></li>
+	      <li class='<% if yield(:current_page) == 'services' %>active<% end %>'><a href="/services"><span>Services </span><span class='nav_descript'>Building the new web</span></a></li>
+	      <li class='<% if yield(:current_page) == 'portfolio' %>active<% end %>'><a href="/portfolio"><span>Portfolio </span><span class='nav_descript'>Good Ideas. Brought to life.</span></a></li>
+	      <li class='<% if yield(:current_page) == 'blog' %>active<% end %>'><a href="/blog"><span>Blog </span><span class='nav_descript'>Dialogue for Tech Zealots</span></a></li>
+	      <li class='<% if yield(:current_page) == 'community' %>active<% end %>'><a href="/community"><span>Community </span><span class='nav_descript'>Technological philanthropy</span></a></li>
+	      <li class='<% if yield(:current_page) == 'about' %>active<% end %>'><a href="/about"><span>About </span><span class='nav_descript'>Meet our team of solutionaries</span></a></li>
+
+	    </ul>
+	  </nav>
+	
+	  <section id="contact">
+	      <div class="contact">
+	      	<a href="/contact" class="contact btn blue">Contact Us</a>
+	      </div>
+	      
+	      <p>801.499.4594</p>   
+	      <ul class="social cf">
+	        <li>
+	          <a class="facebook" href="https://www.facebook.com/pages/Dice-Media-Group/138622559486145" title="Intridea on Facebook" target="_blank">Facebook</a> </li>
+	        <li>
+	          <a class="twitter" href="https://twitter.com/dicemediagroup" title="Dice Media Group on Twitter" target="_blank">Twitter</a>
+	        </li>
+	        <!-- <li>
+	          <a class="linkedin" href="http://www.linkedin.com/company/intridea-inc" title="Intridea on Linkedin" target="_blank">Linkedin</a>
+	        </li> -->
+	        <!-- <li>
+	          <a class="email" href="/about/newsletter" title="Join the Intridea Newsletter">Newsletter</a>
+	        </li> -->
+	      </ul>
+	  </section>
+	</div>
+	
+	<div class="main visible-phone">
+		<!-- <select id="hidden_nav">
+			  <option value="home"   >Home</option>
+			  <option value="services" selected=&quot;selected&quot;>Services</option>
+			  <option value="portfolio" >Portfolio</option>
+			  <option value="blog" >Blog</option>
+			  <option value="community" >Community</option>
+			  <option value="about" >About</option>
+			</select> -->
+		<h1 class="logo"><a href="/">Intridea</a></h1>
+
+		<!-- <div id="hidden_links">
+			<a id="hidden_home" href="/"></a>
+			<a id="hidden_services" href="/services"></a>
+			<a id="hidden_portfolio" href="/portfolio"></a>
+			<a id="hidden_blog" href="/blog"></a>
+			<a id="hidden_community" href="/community"></a>
+			<a id="hidden_about" href="/about"></a>				
+		</div>		 -->
+												
+    <select class="chzn_select iphone_nav" id="main_nav_url" name="main_nav_url" style="width:150px; display:none;"><option value="/">Home</option>
+<option value="/contact">Contact Us</option>
+<option value="/services" selected="selected">Services</option>
+<option value="/portfolio">Portfolio</option>
+<option value="/blog">Blog</option>
+<option value="/community">Community</option>
+<option value="/about">About</option></select>
+	</div>		
+
 </div>
 
-</body>
+<!-- for mobile -->
+<div id="sub_nav" class="visible-phone portfolio_nav services_index">
+  <ul class="nav clearfix">
+	    <li class="active nav_all"><a value="all" href="#" data-filter="*" class="filter all">Show All</a></li>
+	    <li class="nav_web"><a value="web" href="#" data-filter=".web" class="filter web">Web</a></li>
+	    <li class="nav_mobile"><a value="mobile" href="#" data-filter=".mobile" class="filter mobile">Mobile</a></li>
+	    <li class="nav_labs"><a value="labs" href="#" data-filter=".labs" class="filter labs">Labs</a></li>
+  </ul>
+</div>
+
+      <div class="wrapper omega <%= yield(:masthead_container) %>">
+        <div id="main" role="main">
+			<%= yield %>
+
+        </div>
+        <footer id="footer">
+  <section class="micro-about hidden-phone">
+    <h2>About Us</h2>
+    <p>
+      Intridea is based in Washington, D.C. Most of us live in the DC-MD-VA metro area, though we also have team members in California, Colorado, Kansas, Maine, Minnesota, Missouri, New Hampshire, New York, Pennsylvania, Wisconsin and Wyoming.
+    </p>
+    <p>
+      Interested in working with us, or have a question? <br />
+      Feel free to <a href="/contact">contact us</a> anytime.
+    </p>
+    <p class="copy">&copy; 2013 Dice Media Group, Inc. All Rights Reserved.</p>
+  </section>
+  <section class="micro-contact hidden-phone">
+    <h2>Contact Us</h2>
+    <dl class="cf">
+      <dt class="address">Utah Office</dt>
+      <dd class="address">
+        PO Box 702754<br />
+        West Valley City, Utah 84170<br /> 
+      </dd> 
+      
+      <dt class="phone">Phone</dt>
+      <dd class="phone visible-phone"><a href="tel:18014994594"><strong>801.499.4594</strong></a></dd>
+      <dd class="phone hidden-phone"><strong>801.499.4594</strong></dd>
+      
+      <dt>Email</dt>
+      <dd><a href="mailto:info@dicemediagroup.com"><strong>info@dicemediagroup.com</strong></a></dd>
+            
+      <dt>Twitter</dt>
+      <dd><a href="http://www.twitter.com/dicemediagroup"><strong>@dicemediagroup</strong></a></dd>
+    </dl>
+  </section>
+
+
+  <section class="micro-contact visible-phone">
+    <h2>Contact Us</h2>
+    <dl class="cf">
+      <dt class="address">Utah Office</dt>
+      <dd class="address">
+        1020 16th Street NW<br />
+        7th Floor<br /> 
+        Washington, DC 20036
+      </dd> 
+      
+      <dt class="phone">Phone</dt>
+      <dd class="phone visible-phone"><a href="tel:18889684332"><strong>801.499.4594</strong></a></dd>
+      <dd class="phone hidden-phone"><strong>801.499.4594</strong></dd>
+      <a href="/contact" class="btn blue" >Get in Touch</a>
+    </dl>
+
+    <dl class="omega">
+      <dt>Email</dt>
+      <dd><a href="mailto:info@dicemediagroup.com"><strong>info@dicemediagroup.com</strong></a></dd>
+      
+      <dt>Twitter</dt>
+      <dd><a href="http://www.twitter.com/dicemediagroup"><strong>@dicemediagroup</strong></a></dd>
+    </dl>
+  </section>
+
+  <p class="copy visible-phone">&copy; 2013 Intridea, Inc. All Rights Reserved.</p>
+  <a href="/careers" class="hiring hidden-phone">We're Hiring!</a>
+  <a href="http://maps.google.com/maps?q=1020 16th Street NW 7th Floor Washington, D.C. 20006" class="directions visible-phone">Directions to office</a>
+</footer>
+      </div>
+    </div>
+	</div>
+    <script src="/assets/application-d4bbd492c2ea5ca7e636e551a06d1777.js" type="text/javascript"></script>
+
+
+
+  <script>
+    //<![CDATA[
+      var _gaq=[['_setAccount','UA-2083560-1'],['_trackPageview']];
+      (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+      g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+      s.parentNode.insertBefore(g,s)}(document,'script'));
+    //]]>
+  </script>
+
+  <script type="text/javascript">if (!NREUMQ.f) { NREUMQ.f=function() {
+NREUMQ.push(["load",new Date().getTime()]);
+var e=document.createElement("script");
+e.type="text/javascript";
+e.src=(("http:"===document.location.protocol)?"http:":"https:") + "//" +
+  "js-agent.newrelic.com/nr-100.js";
+document.body.appendChild(e);
+if(NREUMQ.a)NREUMQ.a();
+};
+NREUMQ.a=window.onload;window.onload=NREUMQ.f;
+};
+NREUMQ.push(["nrfj","beacon-1.newrelic.com","51ff5bcf09","743619","dVZcFkQODVgDE0tKUkRPWwFTEk5dCAUBQQ==",0,38,new Date().getTime(),"","","","",""]);</script></body>
 </html>
+

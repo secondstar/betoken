@@ -18,10 +18,14 @@ guard 'minitest' do
 	  # with Minitest::Spec
 	  watch(%r|^spec/(.*)_spec\.rb|)
 	  watch(%r|^lib/(.*)\.rb|)            { |m| "spec/#{m[1]}_spec.rb" }
-	  watch(%r|^spec/spec_helper\.rb|)    { "spec" }
+	  watch(%r|^app/(.*)\.rb|)            { |m| "spec/#{m[1]}_spec.rb" }
+	  watch(%r|^app/(.*)\.rb|)            { |m| "spec/#{m[1]}_functional_spec.rb" }
+	  watch(%r|^spec/spec_helper.*\.rb|)    { "spec" }
 end
 
 guard 'passenger' do
   watch(/^lib\/.*\.rb$/)
   watch(/^config\/.*\.rb$/)
 end
+
+guard 'coffeescript', :input => 'app/assets/javascripts'

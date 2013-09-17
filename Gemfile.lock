@@ -65,6 +65,9 @@ GEM
     guard-bundler (1.0.0)
       bundler (~> 1.0)
       guard (~> 1.1)
+    guard-coffeescript (1.3.3)
+      coffee-script (>= 2.2.0)
+      guard (>= 1.1.0)
     guard-minitest (1.3.0)
       guard (>= 1.8)
       minitest (>= 2.1)
@@ -176,6 +179,7 @@ DEPENDENCIES
   database_cleaner (~> 1.1.1)
   guard (~> 1.8.3)
   guard-bundler
+  guard-coffeescript (~> 1.3.3)
   guard-minitest
   guard-passenger
   jbuilder (~> 1.2)
