@@ -1,10 +1,14 @@
+require 'date'
 require 'active_model'
 
 class Post
   extend ActiveModel::Naming
   include ActiveModel::Conversion
+  include ActiveModel::Validations
 
-  attr_accessor :blog, :title, :body
+  validates :title, :presence => true
+
+  attr_accessor :blog, :title, :body, :image_url, :pubdate
 
   def initialize(attrs={})
     attrs.each do |k,v| send("#{k}=",v) end 
@@ -14,7 +18,9 @@ class Post
     false
   end
 
-  def publish
+  def publish(clock=DateTime)
+    return false unless valid?
+    self.pubdate = clock.now
     blog.add_entry(self)
   end
 end

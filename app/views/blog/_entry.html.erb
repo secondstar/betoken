@@ -1,8 +1,11 @@
 <article>
-	<%= entry = present(entry, self) %>
-	<header>
-		<p><time pubdate="pubdate"><%= entry.pubdate %></time></p>
-		<h3><%= entry.title %></h3>
-	</header>
-	<%= entry.render_body %>
+  <header>
+    <p><time pubdate="pubdate"><%= entry.pubdate %></time></p>
+    <h3><%= entry.title %></h3>
+  </header>
+  <% if entry.image_url.present? %>
+    <%= render "/posts/picture_body", post: entry %>
+  <% else %>
+    <%= render "posts/text_body", post: entry %>
+  <% end %>
 </article>

@@ -1,0 +1,66 @@
+/* #Site Styles
+================================================== */
+h2.tagline {
+    font-size: 17px;
+    font-style: italic;
+}
+
+.banner {
+    text-align: center;
+    color: white;
+}
+.banner .notice {
+    border-radius: 5px;
+    background-color: #90ee90;
+    border: solid 2px #bfeebf;
+}
+.banner .error {
+    border-radius: 5px;
+    background-color: #ff6347;
+    border: solid 2px #ffbbaf;
+}
+
+.field_with_errors input {
+    border: 1px solid #ff6347 !important;
+}
+/* – Style for the div element with the error messages. */
+#errorExplanation {
+    border: 2px solid #ffbbaf;
+    margin-bottom: 1ex;
+}
+ /* – Style for the header of the div element. */
+#errorExplanation h2 {
+    font-size: 21px;
+    font-weight: bold;
+    text-align: center;
+    color: white;
+    background-color: #ff6347;
+}
+ /* Style for the paragraph that holds the message that appears right
+    below the header of the div element. */
+#errorExplanation p {
+    margin: 1ex;
+}
+
+#errorExplanation ul {
+    margin-left: 4ex;
+    margin-right: 4ex;
+}
+
+#errorExplanation ul li {
+    list-style: circle;
+}
+
+figcaption {
+    font-style: italic;
+    text-align: center;
+}
+
+.tag_list li {
+    list-style: none;   
+}
+
+article ul.tags, article ul.tags li {
+    display: inline;
+}
+
