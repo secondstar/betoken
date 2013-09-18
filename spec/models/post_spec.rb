@@ -1,31 +1,20 @@
-require 'minitest/autorun'
-require_relative '../spec_helper_lite'
+require_relative '../spec_helper_full'
 require_relative '../../app/models/post'
 
+class PostTest < ActiveSupport::TestCase
+end
+
 describe Post do
+  # include SpecHelpers
   before do
-    @it = Post.new
+    # setup_nulldb
+    @it = Post.new(:title => "TITLE")
+    @ar = @it
+    @ar_class = Post
   end
 
-  it "should support setting attributes in the initializer" do
-    it = Post.new(:title => "mytitle", :body => "mybody")
-    it.title.must_equal "mytitle"
-    it.body.must_equal "mybody"
-  end
-
-  it "should start with blank attributes" do
-    @it.title.must_be_nil
-    @it.body.must_be_nil
-  end
-
-  it "should support reading and writing a title" do
-    @it.title = "foo"
-    @it.title.must_equal "foo"
-  end
-
-  it "should support reading and writing a post body" do
-    @it.body = "foo"
-    @it.body.must_equal "foo"
+  after do
+    # teardown_nulldb
   end
 
   it "should support reading and writing a blog reference" do
@@ -38,7 +27,7 @@ describe Post do
     before do
       @blog = stub!
       @it.blog = @blog
-      @it.title = "TITLE"
+      stub(@ar).valid?{true}
     end
 
     it "should add the post to the blog" do
@@ -50,23 +39,23 @@ describe Post do
       assert(@it.publish)
     end
 
-    describe "given an invalid post" do
-      before do @it.title = nil end
-
-      it "should not add the post to the blog" do
-        dont_allow(@blog).add_entry
-        @it.publish
-      end
-
-      it "should return false" do
-        refute(@it.publish)
-      end
-    end
+    # describe "given an invalid post" do
+    #   before do
+    #     stub(@ar).valid?{false}
+    #   end
+    # 
+    #   it "should not add the post to the blog" do
+    #     dont_allow(@blog).add_entry
+    #     @it.publish
+    #   end
+    # 
+    #   it "should return false" do
+    #     refute(@it.publish)
+    #   end
+    # end
   end
 
   describe "#pubdate" do
-    before do @it.title = "TITLE" end
-
     describe "before publishing" do
       it "should be blank" do
         @it.pubdate.must_be_nil
@@ -83,7 +72,9 @@ describe Post do
       end
 
       it "should be a datetime" do
-        @it.pubdate.class.must_equal(DateTime)
+        assert(@it.pubdate.is_a?(DateTime) || 
+               @it.pubdate.is_a?(ActiveSupport::TimeWithZone),
+               "pubdate must be a datetime of some kind")
       end
 
       it "should be the current time" do
@@ -93,16 +84,15 @@ describe Post do
     end
   end
 
-  it "should not be valid with a blank title" do
-    [nil, "", " "].each do |bad_title|
-      @it.title = bad_title
-      refute(@it.valid?)
+  describe "#picture?" do
+    it "should be true when the post has a picture URL" do
+      @it.image_url = "http://example.org/foo.png"
+      assert(@it.picture?)
+    end
+
+    it "should be false when the post has no picture URL" do
+      @it.image_url = ""
+      refute(@it.picture?)
     end
   end
-
-  it "should be valid with a non-blank title" do
-    @it.title = "x"
-    assert(@it.valid?)
-  end 
-
 end

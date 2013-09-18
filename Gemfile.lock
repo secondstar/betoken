@@ -1,10 +1,3 @@
-GIT
-  remote: git://github.com/avdi/nulldb.git
-  revision: 53d6ad34670a0d56d470c7b5a2ee52b3c12e0f06
-  specs:
-    activerecord-nulldb-adapter (0.2.3)
-      activerecord (>= 2.0.0)
-
 GEM
   remote: https://rubygems.org/
   specs:
@@ -96,10 +89,13 @@ GEM
     mime-types (1.25)
     mini_portile (0.5.1)
     minitest (4.7.5)
+    minitest-spec-rails (4.7.4)
+      minitest (~> 4.7)
+      rails (<= 4.0)
     multi_json (1.8.0)
     nokogiri (1.6.0)
       mini_portile (~> 0.5.0)
-    passenger (4.0.17)
+    passenger (4.0.18)
       daemon_controller (>= 1.1.0)
       rack
       rake (>= 0.8.1)
@@ -173,7 +169,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  activerecord-nulldb-adapter!
   capybara (~> 2.1.0)
   coffee-rails (~> 4.0.0)
   database_cleaner (~> 1.1.1)
@@ -185,6 +180,7 @@ DEPENDENCIES
   jbuilder (~> 1.2)
   jquery-rails
   launchy (~> 2.3.0)
+  minitest-spec-rails
   passenger
   rails (= 4.0.0)
   rb-fsevent (~> 0.9.3)
