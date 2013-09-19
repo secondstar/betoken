@@ -143,12 +143,13 @@ mixpanel.init("f76e33f7104bb9e97b3a440b544a4220");</script><!-- end Mixpanel -->
       <div class="wrapper omega <%= yield(:masthead_container) %>">
         <div id="main" role="main">
 		    <div class="banner sixteen columns clearfix">
-				<% if flash[:notice] %>
-				  <p class="notice"><%= flash[:notice] %></p>
-				<% end %>
-				<% if flash[:error] %>
-				  <p class="error"><%= flash[:error] %></p>
-				<% end %>
+				<div id="flash">
+				  <% flash.each do |key, value| %>
+				    <div title="<%= key.to_s.humanize %>" class="<%= key %>">
+				      <p><%= value %></p>
+				    </div>
+				  <% end %>
+				</div>				
 		    </div>
 	
 			<%= yield %>
