@@ -99,6 +99,7 @@ GEM
       daemon_controller (>= 1.1.0)
       rack
       rake (>= 0.8.1)
+    pg (0.17.0)
     polyglot (0.3.3)
     pry (0.9.12.2)
       coderay (~> 1.0.5)
@@ -182,6 +183,7 @@ DEPENDENCIES
   launchy (~> 2.3.0)
   minitest-spec-rails
   passenger
+  pg (~> 0.17.0)
   rails (= 4.0.0)
   rb-fsevent (~> 0.9.3)
   rr (~> 1.1.2)
