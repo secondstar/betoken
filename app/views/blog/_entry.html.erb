@@ -1,11 +1,20 @@
-<article>
-  <header>
-    <p><time pubdate="pubdate"><%= entry.pubdate %></time></p>
-    <h3><%= entry.title %></h3>
-  </header>
-  <% if entry.image_url.present? %>
-    <%= render "/posts/picture_body", post: entry %>
-  <% else %>
-    <%= render "posts/text_body", post: entry %>
-  <% end %>
-</article>
+<div class="main post_summary">
+  
+  <h2 class="blog_title"><%= link_to entry.title, post_path(entry) %></h2>
+  
+ 	<div class="meta cf">
+		<span class="author">By <a href="/about/team/robert-dempsey">Robert Dempsey</a></span>  | 
+		<span class="date"><%= entry.pubdate %></span>
+		<!-- <span class="tags"><a href="http://www.intridea.com/blog/tag/conferences">conferences</a></span> -->
+	</div>
+
+  <article class="body clearfix"><div class="blog-img">
+        <a href="/blog/2013/8/20/see-you-in-madison"><img alt="Medium" class="post_image_small" src="http://s3.amazonaws.com/intridea-responsive/production/posts/images/660/medium.png"></a>
+      </div>
+
+    <div class="blog-content">
+		<%= entry.body %>
+		<%= link_to "Read more…", post_path(entry), :class => "more_link btn blue" %>
+    </div>
+  </article><div style="clear: both"></div>
+</div>
