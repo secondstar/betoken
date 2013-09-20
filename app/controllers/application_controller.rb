@@ -2,7 +2,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery
   before_filter :init_blog
   # helper :presenters
-  
+    add_flash_types :tadah, :error, :warning
   private
   def init_blog
     @blog = THE_BLOG
