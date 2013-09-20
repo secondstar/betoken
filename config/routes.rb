@@ -1,5 +1,7 @@
 Represent::Application.routes.draw do
   get "blog/index"
+  get "welcome/index"
+  get '/blog', to: 'blog#index'
   resources :posts
   # resources :blogs
 
@@ -7,7 +9,7 @@ Represent::Application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'blog#index'
+  root 'welcome#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

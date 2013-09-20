@@ -1,10 +1,286 @@
-<article>
-  <header>
-    <p><time pubdate="pubdate"><%= @post.pubdate %></time></p>
-    <h3><%= @post.title %></h3>
-    <div class="entry_tags">Tags: 
-      <%# post.tags.render(self) %>
+<div class="blog detail clearfix">
+
+	<div class="main_column blog_wrapper">
+	  	
+	  <hgroup><div class="hidden-phone">
+				<h2><a href="http://www.intridea.com/blog"><%= @blog.title %>: <%= @blog.subtitle %></a></h2>
+			</div>
+		</hgroup><hgroup class="visible-phone"><h2><a href="http://www.intridea.com/blog">Back to Blog</a></h2>
+				<a href="http://www.intridea.com/contact" class="btn blue">Get in Touch</a>
+		</hgroup><div id="content" class="main cf">
+	<article class="post"><h2 class="blog_title"><a href="http://www.intridea.com/blog/2013/9/13/see-you-at-mobileux-camp-dc-tomorrow"><%= @post.title %></a></h2>
+	  <p class="meta">
+	  	<span class="author">By <a href="http://www.intridea.com/about/team/robert-dempsey">Robert Dempsey</a></span> 
+	  	<span class="date"><%= @post.pubdate  %></span> in 
+	  	<span class="tags"><a href="http://www.intridea.com/blog/tag/events">events</a></span>
+	  </p>
+
+	  <div class="body">
+	    <%= image_tag "medium.png", :class => "post_image_large" %>
+		<p><%= @post.body  %></p>
+		<%= link_to "Welcome", welcome_index_path %>
+
+
+	  </div>
+	</article>
+</div>
+<div class="main disqus">
+
+  <div id="disqus_thread"><div style="overflow: hidden;" dir="ltr"><div style="width: 54px; height: 54px; margin: 0px auto; overflow: hidden; background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFMAAABmCAMAAACA210sAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAadEVYdFNvZnR3YXJlAFBhaW50Lk5FVCB2My41LjEwMPRyoQAAAlhQTFRFMzY63+TtMzY63+TtMzY63+TtMzY63+TtMzY63+TtMzY63+TtMzY63+TtMzY63+TtMzY63+TtMzY63+TtMzY63+TtMzY63+TtMzY63+TtMzY63+TtMzY63+TtMzY63+TtMzY63+TtMzY63+TtMzY63+TtMzY63+TtMzY63+TtMzY63+TtMzY63+TtMzY63+TtMzY63+TtMzY63+TtMzY63+TtMzY63+TtMzY63+TtMzY63+TtMzY63+TtMzY63+TtMzY63+TtMzY63+TtMzY63+TtMzY63+TtMzY63+TtMzY63+TtMzY63+TtMzY63+TtMzY63+TtMzY63+TtMzY63+TtMzY63+TtMzY63+TtMzY63+TtMzY63+TtMzY63+TtMzY63+TtMzY63+TtMzY63+TtMzY63+TtMzY63+TtMzY63+TtMzY63+TtMzY63+TtMzY63+TtMzY63+TtMzY63+TtMzY63+TtMzY63+TtMzY63+TtMzY63+TtMzY63+TtMzY63+TtMzY63+TtMzY63+TtMzY63+TtMzY63+TtMzY63+TtMzY63+TtMzY63+TtMzY63+TtMzY63+TtMzY63+TtMzY63+TtMzY63+TtMzY63+TtMzY63+TtMzY63+TtMzY63+TtMzY63+TtMzY63+TtMzY63+TtMzY63+TtMzY63+TtMzY63+TtMzY63+TtMzY63+TtMzY63+TtMzY63+TtMzY63+TtMzY63+TtMzY63+TtMzY63+TtMzY63+TtMzY63+TtMzY63+TtMzY63+TtMzY63+TtWDj2BwAAAMh0Uk5TAAABAQICAwMEBAUFBgYHBwgICQkKCgsLDAwNDQ4ODw8QEBEREhITExQUFRUWFhcXGBgZGRoaGxscHB0dHh4fHyAgISEjIyQkJSUmJigoKSkqKisrLCwtLS4uLy8wMDExMjIzMzQ0NTU2Njc3ODg5OTo6Ozs8PD09Pj4/P0BAQUFCQkNDRERFRUZGR0dISElJS0tMTE1NTk5PT1BQUVFSUlNTVFRVVVZWV1dYWFlZWlpbW1xcXV1eXl9fYGBhYWJiY2NkZGVlZmaMInkiAAAFVklEQVRo3u2Yf0hbVxTHP/flmYYQxFoXghMJzkpXQmszCd0ma7eKKyKuSOlKGaV0RaRzsIHIGDK2MqSsXVvKcKWIG6V0ItI5Z1tXZBsiIkWciC0iYsMIIbisC1mWhpDG/RFjfpvr4O2vnH+Se+/J575z3z3n5n4F2Uy12aotpUY1HFp1OecXo+S00vo6q9kYXF2ZnfLG+0QWYH2jw5jcEZi6P50dW33qoBL//sl4TqbpyPHSzB97bo2GMjr1bcfUjcbcWXIwlZb24uxBenvH0sM+b0s0om2PAJPBC+hS3KxfvrUtx8IZD+z9LZDcUfL1zqTWj98DtLVP/JP2nIc74+vonplfWQ2EDcZya22deb3T1zOZtOq9saf0jMy6vSarywdU3tAvdIRTmGdOxz5Dd8cWkqeyNzXG1i16ZWijs+MEQPjaUCTh+EU9DFxNZna2AhAZvPUkPXDLqebY++3rj7/xfhXwfTyX5LX/EhA9tZxYz/bjACx0/vQ0YzEDk9O27QD2vx/Gej6oBiKdcylub24DsWN8g9ncAcDAp39mfUV/jJp3Aux//Big9CMF+Go8xcfveR14/k6cuatHB0Qvf5MrZ55NiH0Ajl/8wKEDgOezNOeVV8tAca8z9Zd3AFy4nTsLmRX7AP2Ld9bgxAvA4Ey6S9HLwNP11HrHCnBjmM2sbwTA1gJUAWQgmQKwxpiWkwAz19ncriwBtJugDMCZ4eAOAeYY84QeCPZE8zBDn0eA4qOgAvgzPQKASQEobQbo85DPlgcBjhkIA2SpNSVAQAFoMADeYfLbzSBQ8hpPACwZw2YV8CoATQCDIQmmbwTgMCsA9oxhO4BTASw1QGQMGRsBqDPNADSr6aPNADNKnD7rlWI6lwG1bioCVDSlDb5iB6ITClAL8AA5mwbY9eTXjaRPWs1ugEmvEt/AjySZjwCs9EcAQ3tK8bpUAkT7UYBKgGVJphOgAucAwI2kgfq+KoChJVRQTYA/IMl0AZTB9Vob9+cBSn1RxeJorAVg6RqoYIwngJRFQgYwQqSr19ILUH6LkCl+Iru6QglmEGkosdT0nXWsApzVo4+PLXZ5Y6NBWAdLmbrOxXcfoO6NxHk81BsmiVksjTSkRKV0bBAnvl3amDXiLwZTsV+OWQmQyA/9UF2V2Rj0OmcnvMmROPcAVXNbYLoS5W90NMNFAX4HsEnGvjt7NU5nLgA4JJn78yedEj9XasukkDXVQGQ2L9O9DKhNUswmgJlAXiZjAEdUCWRJC8Bd8jP9AOGIBPOkAfBNSjBbAW7LrOZRgIFQfubuXUBI4uwwdKuAL9/sCnAE4GeJPIrV9WuB/MziBgCJk7i9BWB+VKLKHDYAiwuo5RUW9/QmyJMAgXNRCWYrgP5qhVmBQHeus87Y1QhAjztvPDocbwNsLzcJQN+oPsy6p2wXXgLg4j0kmO9Zk9ui9tBfzrV0r/L3P9wOwPXvJHacKLudkT/O4fHkW4Jib2pYv3dclPlPhTh9Jl6nPW7vQcP698W5RddqMGQyVpbb7fHqEjg3KVUTxLA56Ha7XB63OwKV3ZuU0QfnPXLlUOxxpcTZ0laS4755dVz2yMq4Fxtbj2WppO6bd8P8Zyao9Q0OU8q9Z3p8Koq8CZF1h9lqaixlRn0w5HWtLCytsSVTc8y0rahIpxNFz3S6Ip1Y26J2ITTQLoQG2oXQQLsQGmgXQgPtQmigXQgNtAuhgXYhNNAuhAbahShoFwXtoqBdFLSLgnZR0C4K2kVBuyhoFwXtIofOIDTQLoQG2sVzGmgX72qgXfyggXaxVwPtQmigXYj/S7tQU7WLrQCBfwFnft8xK3413wAAAABJRU5ErkJggg==&quot;); background-repeat: no-repeat;"><style type="text/css">.disqus-loader{animation:disqus-embed-spinner .7s infinite linear;-webkit-animation:disqus-embed-spinner .7s infinite linear}@keyframes disqus-embed-spinner{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}@-webkit-keyframes disqus-embed-spinner{0%{-webkit-transform:rotate(0deg)}100%{-webkit-transform:rotate(360deg)}}</style><div class="disqus-loader" style="width: 29px; height: 29px; margin: 11px 14px; background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFMAAABmCAMAAACA210sAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAadEVYdFNvZnR3YXJlAFBhaW50Lk5FVCB2My41LjEwMPRyoQAAAlhQTFRFMzY63+TtMzY63+TtMzY63+TtMzY63+TtMzY63+TtMzY63+TtMzY63+TtMzY63+TtMzY63+TtMzY63+TtMzY63+TtMzY63+TtMzY63+TtMzY63+TtMzY63+TtMzY63+TtMzY63+TtMzY63+TtMzY63+TtMzY63+TtMzY63+TtMzY63+TtMzY63+TtMzY63+TtMzY63+TtMzY63+TtMzY63+TtMzY63+TtMzY63+TtMzY63+TtMzY63+TtMzY63+TtMzY63+TtMzY63+TtMzY63+TtMzY63+TtMzY63+TtMzY63+TtMzY63+TtMzY63+TtMzY63+TtMzY63+TtMzY63+TtMzY63+TtMzY63+TtMzY63+TtMzY63+TtMzY63+TtMzY63+TtMzY63+TtMzY63+TtMzY63+TtMzY63+TtMzY63+TtMzY63+TtMzY63+TtMzY63+TtMzY63+TtMzY63+TtMzY63+TtMzY63+TtMzY63+TtMzY63+TtMzY63+TtMzY63+TtMzY63+TtMzY63+TtMzY63+TtMzY63+TtMzY63+TtMzY63+TtMzY63+TtMzY63+TtMzY63+TtMzY63+TtMzY63+TtMzY63+TtMzY63+TtMzY63+TtMzY63+TtMzY63+TtMzY63+TtMzY63+TtMzY63+TtMzY63+TtMzY63+TtMzY63+TtMzY63+TtMzY63+TtMzY63+TtMzY63+TtMzY63+TtMzY63+TtMzY63+TtMzY63+TtMzY63+TtMzY63+TtMzY63+TtMzY63+TtMzY63+TtWDj2BwAAAMh0Uk5TAAABAQICAwMEBAUFBgYHBwgICQkKCgsLDAwNDQ4ODw8QEBEREhITExQUFRUWFhcXGBgZGRoaGxscHB0dHh4fHyAgISEjIyQkJSUmJigoKSkqKisrLCwtLS4uLy8wMDExMjIzMzQ0NTU2Njc3ODg5OTo6Ozs8PD09Pj4/P0BAQUFCQkNDRERFRUZGR0dISElJS0tMTE1NTk5PT1BQUVFSUlNTVFRVVVZWV1dYWFlZWlpbW1xcXV1eXl9fYGBhYWJiY2NkZGVlZmaMInkiAAAFVklEQVRo3u2Yf0hbVxTHP/flmYYQxFoXghMJzkpXQmszCd0ma7eKKyKuSOlKGaV0RaRzsIHIGDK2MqSsXVvKcKWIG6V0ItI5Z1tXZBsiIkWciC0iYsMIIbisC1mWhpDG/RFjfpvr4O2vnH+Se+/J575z3z3n5n4F2Uy12aotpUY1HFp1OecXo+S00vo6q9kYXF2ZnfLG+0QWYH2jw5jcEZi6P50dW33qoBL//sl4TqbpyPHSzB97bo2GMjr1bcfUjcbcWXIwlZb24uxBenvH0sM+b0s0om2PAJPBC+hS3KxfvrUtx8IZD+z9LZDcUfL1zqTWj98DtLVP/JP2nIc74+vonplfWQ2EDcZya22deb3T1zOZtOq9saf0jMy6vSarywdU3tAvdIRTmGdOxz5Dd8cWkqeyNzXG1i16ZWijs+MEQPjaUCTh+EU9DFxNZna2AhAZvPUkPXDLqebY++3rj7/xfhXwfTyX5LX/EhA9tZxYz/bjACx0/vQ0YzEDk9O27QD2vx/Gej6oBiKdcylub24DsWN8g9ncAcDAp39mfUV/jJp3Aux//Big9CMF+Go8xcfveR14/k6cuatHB0Qvf5MrZ55NiH0Ajl/8wKEDgOezNOeVV8tAca8z9Zd3AFy4nTsLmRX7AP2Ld9bgxAvA4Ey6S9HLwNP11HrHCnBjmM2sbwTA1gJUAWQgmQKwxpiWkwAz19ncriwBtJugDMCZ4eAOAeYY84QeCPZE8zBDn0eA4qOgAvgzPQKASQEobQbo85DPlgcBjhkIA2SpNSVAQAFoMADeYfLbzSBQ8hpPACwZw2YV8CoATQCDIQmmbwTgMCsA9oxhO4BTASw1QGQMGRsBqDPNADSr6aPNADNKnD7rlWI6lwG1bioCVDSlDb5iB6ITClAL8AA5mwbY9eTXjaRPWs1ugEmvEt/AjySZjwCs9EcAQ3tK8bpUAkT7UYBKgGVJphOgAucAwI2kgfq+KoChJVRQTYA/IMl0AZTB9Vob9+cBSn1RxeJorAVg6RqoYIwngJRFQgYwQqSr19ILUH6LkCl+Iru6QglmEGkosdT0nXWsApzVo4+PLXZ5Y6NBWAdLmbrOxXcfoO6NxHk81BsmiVksjTSkRKV0bBAnvl3amDXiLwZTsV+OWQmQyA/9UF2V2Rj0OmcnvMmROPcAVXNbYLoS5W90NMNFAX4HsEnGvjt7NU5nLgA4JJn78yedEj9XasukkDXVQGQ2L9O9DKhNUswmgJlAXiZjAEdUCWRJC8Bd8jP9AOGIBPOkAfBNSjBbAW7LrOZRgIFQfubuXUBI4uwwdKuAL9/sCnAE4GeJPIrV9WuB/MziBgCJk7i9BWB+VKLKHDYAiwuo5RUW9/QmyJMAgXNRCWYrgP5qhVmBQHeus87Y1QhAjztvPDocbwNsLzcJQN+oPsy6p2wXXgLg4j0kmO9Zk9ui9tBfzrV0r/L3P9wOwPXvJHacKLudkT/O4fHkW4Jib2pYv3dclPlPhTh9Jl6nPW7vQcP698W5RddqMGQyVpbb7fHqEjg3KVUTxLA56Ha7XB63OwKV3ZuU0QfnPXLlUOxxpcTZ0laS4755dVz2yMq4Fxtbj2WppO6bd8P8Zyao9Q0OU8q9Z3p8Koq8CZF1h9lqaixlRn0w5HWtLCytsSVTc8y0rahIpxNFz3S6Ip1Y26J2ITTQLoQG2oXQQLsQGmgXQgPtQmigXQgNtAuhgXYhNNAuhAbahShoFwXtoqBdFLSLgnZR0C4K2kVBuyhoFwXtIofOIDTQLoQG2sVzGmgX72qgXfyggXaxVwPtQmigXYj/S7tQU7WLrQCBfwFnft8xK3413wAAAABJRU5ErkJggg==&quot;); background-repeat: no-repeat; background-position: -54px 0px;"></div></div><p align="center">Disqus seems to be taking longer than usual. <a href="#" onclick="DISQUS.reset({reload: true}); return false;">Reload</a>?</p></div><iframe src="http://disqus.com/embed/comments/?f&amp;t_u=file%3A%2F%2F%2FUsers%2Fcaptainproton%2FDownloads%2Fintridea_com_blog_entry.html&amp;t_d=See%20You%20At%20MobileUXCamp%20DC%20Tomorrow!%20%7C%20Intridea%20Blog&amp;t_t=See%20You%20At%20MobileUXCamp%20DC%20Tomorrow!%20%7C%20Intridea%20Blog&amp;s_o=default&amp;disqus_version=1379622375#2" style="width: 100% ! important; border: medium none ! important; overflow: hidden ! important; height: 0px ! important;" role="complementary" allowtransparency="true" data-disqus-uid="2" id="dsq2" frameborder="0" width="100%"></iframe></div>
+<footer><div class="meta tags">
+				<h3 style="display: inline-block;">Tags:</h3>
+					<a href="http://www.intridea.com/blog/tag/events">events</a>
+			</div>
+
+
+		<div class="clearfix">
+			<div class="alignleft">
+				<div class="like clearfix">
+				<iframe src="intridea_com_blog_entry_files/like.html" style="border:none; overflow:hidden; width:90px; height:21px;" allowtransparency="true" frameborder="0" scrolling="no"></iframe>
+
+				<iframe data-twttr-rendered="true" title="Twitter Tweet Button" style="width: 107px; height: 20px;" class="twitter-share-button twitter-count-horizontal" src="intridea_com_blog_entry_files/tweet_button.html" allowtransparency="true" frameborder="0" scrolling="no"></iframe>
+</div>
+			</div>
+			<div class="alignright hidden-phone blog_nav">
+					<a href="http://www.intridea.com/blog/2013/8/29/so-long-madison-and-thanks-for-all-the-ruby" style="padding-right:10px;">← Previous Post</a>
+				<a href="#">↑ Back to Top</a>
+			</div>
+		</div>
+
+		<div class="author clearfix hidden-phone">
+			<%= image_tag "medium_002.png", :title => "medium", :class => "auth_photo" %>
+			<div class="auth-bio alignleft">
+				<h4>Robert Dempsey</h4>
+				<p>Leaving a culinary career behind for a career in tech, Robert has
+ more than 14 years experience building businesses, developing web 
+applications, conducting conferences, and generally geeking out with a 
+combination of marketing and tech.
+
+Prior to joining Intridea, Robert was the CEO of Dempsey Marketing, 
+helping an international clientele gain more business using his system 
+of Trifecta Marketing. Before that, he was the CEO of Atlantic Dominion 
+Solutions, a Ruby on Rails development firm that served clients 
+including Chrysler. He also created and chaired the first Ruby on Rails 
+conference in the southeast - Acts as Conference - two years in a row.
+
+Today you'll find Rob at a conference, meetup, or slinging Ruby, Python 
+and R to mine the Intridea web and CRM analytics.</p>
+			</div>
+		</div>
+	</footer><div id="more_slideout" class="clearfix">
+		<h1>More from our blog</h1>
+		<h2><a href="http://www.intridea.com/blog/2013/8/29/so-long-madison-and-thanks-for-all-the-ruby">So Long Madison And Thanks For All The Ruby</a></h2>
+		
+		<a href="http://www.intridea.com/blog/2013/8/29/so-long-madison-and-thanks-for-all-the-ruby">Read Now →</a>
+		<div class="close">X</div>
+	
+	</div>
+	
+	<div class="clearfix"></div>
+	
+	<section class="more cf hidden-phone"><h2>More posts by Robert Dempsey</h2>
+
+		<div class="more-post-container cf">
+				<div class="more-post alpha">
+					<div class="item_img">	
+						<a href="http://www.intridea.com/blog/2013/9/13/see-you-at-mobileux-camp-dc-tomorrow"><div class="image_thumb" style="background-image:url(http://s3.amazonaws.com/intridea-responsive/production/posts/images/662/large.png)"></div></a>		
+						<span class="author-bubble">Robert Dempsey <span class="arrow"></span></span>
+					</div>
+					<a href="http://www.intridea.com/blog/2013/9/13/see-you-at-mobileux-camp-dc-tomorrow"><h4>Join Brandon, Kathryn and me tomorrow at the Goethe-Institut / German Cultura...</h4></a>		
+				</div>
+				<div class="more-post ">
+					<div class="item_img">	
+						<a href="http://www.intridea.com/blog/2013/8/29/so-long-madison-and-thanks-for-all-the-ruby"><div class="image_thumb" style="background-image:url(http://s3.amazonaws.com/intridea-responsive/production/posts/images/661/large.png)"></div></a>		
+						<span class="author-bubble">Robert Dempsey <span class="arrow"></span></span>
+					</div>
+					<a href="http://www.intridea.com/blog/2013/8/29/so-long-madison-and-thanks-for-all-the-ruby"><h4>The excellent Madison Ruby conference is a wrap, but the fall conference seas...</h4></a>		
+				</div>
+				<div class="more-post omega">
+					<div class="item_img">	
+						<a href="http://www.intridea.com/blog/2013/8/20/see-you-in-madison"><div class="image_thumb" style="background-image:url(http://s3.amazonaws.com/intridea-responsive/production/posts/images/660/large.png)"></div></a>		
+						<span class="author-bubble">Robert Dempsey <span class="arrow"></span></span>
+					</div>
+					<a href="http://www.intridea.com/blog/2013/8/20/see-you-in-madison"><h4>Join Intrideans Anthony Nyström and me, Robert Dempsey, in Madison, Wisconsin...</h4></a>		
+				</div>
+		</div>
+	</section><div style="clear: both"></div>
+	
+</div>
+
+	</div>
+	
+	<div class="prev_next main visible-phone">
+			<a href="http://www.intridea.com/blog/2013/8/29/so-long-madison-and-thanks-for-all-the-ruby" class="prev"><span class="arrow"></span>Read Previous Article</a>
+	</div>
+
+	
+
+<aside class="post-sidebar visible-desktop clearfix"><ul class="blog-connect clearfix">
+<li><a href="http://www.intridea.com/contact" class="btn blue" style="width:110px;">Get in Touch</a></li>
+		<li><a href="http://feeds.feedburner.com/intridea" class="btn orange icn" style="width:40px;">
+				<%= image_tag "rss.png", :title => "RSS", :width => "22", :height => "22" %>
+			</a></li>
+		<li><a href="http://www.intridea.com/about/newsletter" class="btn gray icn last" style="width:40px;">
+				<%= image_tag "news.png", :title => "News", :width => "22", :height => "22" %>
+			</a></li>
+	</ul>
+<div class="sidebar">
+		<h3>Share</h3>
+		<ul class="share clearfix">
+<li class="fb_share"><a href="#"></a></li>
+    	<li class="twitter_share"><a href="http://twitter.com/share?url=http%3A%2F%2Fwww.intridea.com%2Fblog%2F2013%2F9%2F13%2Fsee-you-at-mobileux-camp-dc-tomorrow%3F_pjax%3D%255Bdata-pjax-container%255D&amp;via=intridea&amp;text=See+You+At+MobileUXCamp+DC+Tomorrow%21+%7C+Intridea+Blog+%E2%80%93&amp;related=&amp;count=vertical&amp;lang=en" url="http://intridea.com/blog/2013/9/13/see-you-at-mobileux-camp-dc-tomorrow"></a></li>
+    	<li class="plus_share"><a href="https://plusone.google.com/_/+1/confirm?hl=en-US&amp;url=http://www.intridea.com/blog/2013/9/13/see-you-at-mobileux-camp-dc-tomorrow"></a></li>    
+    </ul>
+<div class="sidebar_item">
+  <h3>Our Products</h3>
+    <div class="product">
+      <h4><a href="http://www.omniauth.org/"><%= image_tag "feature_002.png", :title => "Feature" %></a></h4>
+      <p>Flexible, unassuming authentication</p>
     </div>
-  </header>
-  <%= @post.body %>
-</article>
+    <div class="product">
+      <h4><a href="http://intridea.github.com/grape/"><%= image_tag "feature.png", :title => "Feature" %></a></h4>
+      <p>REST-like APIs in Ruby</p>
+    </div>
+    <div class="product">
+      <h4><a href="http://intridea.github.com/green_onion/"><%= image_tag "feature_003.png", :title => "Feature" %></a></h4>
+      <p>UI testing/diffing tool</p>
+    </div>
+</div>
+
+	</div>
+</aside><aside class="blog-sidebar visible-desktop visible-phone"><ul class="blog-connect clearfix hidden-phone">
+<li><a href="http://www.intridea.com/contact" class="btn blue" style="width:110px;">Get in Touch</a></li>
+		<li><a href="http://feeds.feedburner.com/intridea" class="btn orange icn" style="width:40px;">
+				<%= image_tag "rss-f5ec05c10ba21c65ac113b8adc2df1ce.png", :title => "title", :class => "class" %>
+			</a></li>
+		<li><a href="http://www.intridea.com/about/newsletter" class="btn gray icn last" style="width:40px;">
+				<%= image_tag "news-e351dde94e2f5e591a7164f43ad929b3.png", :title => "News", :size  => "22x22" %>
+			</a>
+		</li>
+	</ul>
+<div class="sidebar">
+		<span class="sidebar_item archives">
+		<h3>Blog Archive</h3>
+    	<select class="chzn_select chzn-done" id="blog_archive_url" name="blog_archive_url" style="width: 160px; display: none;"><option>Select a month</option>
+<option selected="selected" value="/blog/archives/2013/9">September 2013 (1)</option>
+<option value="/blog/archives/2013/8">August 2013 (8)</option>
+<option value="/blog/archives/2013/7">July 2013 (3)</option>
+<option value="/blog/archives/2013/6">June 2013 (3)</option>
+<option value="/blog/archives/2013/5">May 2013 (9)</option>
+<option value="/blog/archives/2013/4">April 2013 (3)</option>
+<option value="/blog/archives/2013/3">March 2013 (4)</option>
+<option value="/blog/archives/2013/2">February 2013 (8)</option>
+<option value="/blog/archives/2013/1">January 2013 (2)</option>
+<option value="/blog/archives/2012/12">December 2012 (5)</option>
+<option value="/blog/archives/2012/11">November 2012 (3)</option>
+<option value="/blog/archives/2012/10">October 2012 (2)</option>
+<option value="/blog/archives/2012/9">September 2012 (5)</option>
+<option value="/blog/archives/2012/8">August 2012 (8)</option>
+<option value="/blog/archives/2012/7">July 2012 (3)</option>
+<option value="/blog/archives/2012/6">June 2012 (9)</option>
+<option value="/blog/archives/2012/5">May 2012 (6)</option>
+<option value="/blog/archives/2012/4">April 2012 (6)</option>
+<option value="/blog/archives/2012/3">March 2012 (14)</option>
+<option value="/blog/archives/2012/2">February 2012 (6)</option>
+<option value="/blog/archives/2012/1">January 2012 (6)</option>
+<option value="/blog/archives/2011/12">December 2011 (5)</option>
+<option value="/blog/archives/2011/11">November 2011 (7)</option>
+<option value="/blog/archives/2011/10">October 2011 (6)</option>
+<option value="/blog/archives/2011/9">September 2011 (9)</option>
+<option value="/blog/archives/2011/8">August 2011 (12)</option>
+<option value="/blog/archives/2011/7">July 2011 (7)</option>
+<option value="/blog/archives/2011/6">June 2011 (10)</option>
+<option value="/blog/archives/2011/5">May 2011 (9)</option>
+<option value="/blog/archives/2011/4">April 2011 (13)</option>
+<option value="/blog/archives/2011/3">March 2011 (8)</option>
+<option value="/blog/archives/2011/2">February 2011 (7)</option>
+<option value="/blog/archives/2011/1">January 2011 (6)</option>
+<option value="/blog/archives/2010/12">December 2010 (7)</option>
+<option value="/blog/archives/2010/11">November 2010 (7)</option>
+<option value="/blog/archives/2010/10">October 2010 (13)</option>
+<option value="/blog/archives/2010/9">September 2010 (9)</option>
+<option value="/blog/archives/2010/8">August 2010 (7)</option>
+<option value="/blog/archives/2010/7">July 2010 (7)</option>
+<option value="/blog/archives/2010/6">June 2010 (10)</option>
+<option value="/blog/archives/2010/5">May 2010 (7)</option>
+<option value="/blog/archives/2010/4">April 2010 (16)</option>
+<option value="/blog/archives/2010/3">March 2010 (11)</option>
+<option value="/blog/archives/2010/2">February 2010 (1)</option>
+<option value="/blog/archives/2010/1">January 2010 (5)</option>
+<option value="/blog/archives/2009/12">December 2009 (1)</option>
+<option value="/blog/archives/2009/11">November 2009 (4)</option>
+<option value="/blog/archives/2009/10">October 2009 (4)</option>
+<option value="/blog/archives/2009/9">September 2009 (2)</option>
+<option value="/blog/archives/2009/8">August 2009 (4)</option>
+<option value="/blog/archives/2009/7">July 2009 (3)</option>
+<option value="/blog/archives/2009/6">June 2009 (7)</option>
+<option value="/blog/archives/2009/5">May 2009 (4)</option>
+<option value="/blog/archives/2009/4">April 2009 (5)</option>
+<option value="/blog/archives/2009/3">March 2009 (14)</option>
+<option value="/blog/archives/2009/2">February 2009 (18)</option>
+<option value="/blog/archives/2009/1">January 2009 (3)</option>
+<option value="/blog/archives/2008/12">December 2008 (2)</option>
+<option value="/blog/archives/2008/11">November 2008 (3)</option>
+<option value="/blog/archives/2008/10">October 2008 (7)</option>
+<option value="/blog/archives/2008/9">September 2008 (9)</option>
+<option value="/blog/archives/2008/8">August 2008 (2)</option>
+<option value="/blog/archives/2008/7">July 2008 (7)</option>
+<option value="/blog/archives/2008/6">June 2008 (14)</option>
+<option value="/blog/archives/2008/5">May 2008 (5)</option>
+<option value="/blog/archives/2008/4">April 2008 (14)</option>
+<option value="/blog/archives/2008/3">March 2008 (6)</option>
+<option value="/blog/archives/2008/2">February 2008 (5)</option>
+<option value="/blog/archives/2008/1">January 2008 (6)</option>
+<option value="/blog/archives/2007/12">December 2007 (5)</option>
+<option value="/blog/archives/2007/11">November 2007 (5)</option>
+<option value="/blog/archives/2007/10">October 2007 (7)</option>
+<option value="/blog/archives/2007/9">September 2007 (2)</option>
+<option value="/blog/archives/2007/8">August 2007 (7)</option>
+<option value="/blog/archives/2007/7">July 2007 (4)</option>
+<option value="/blog/archives/2007/6">June 2007 (3)</option>
+<option value="/blog/archives/2007/4">April 2007 (1)</option></select><div style="width: 160px;" class="chzn-container chzn-container-single" id="blog_archive_url_chzn"><a href="javascript:void(0)" class="chzn-single"><span>September 2013 (1)</span><div><b></b></div></a><div class="chzn-drop" style="left: -9000px; width: 160px; top: 35px;"><div style="" class="chzn-search"><input style="width: 125px;" autocomplete="off" type="text"></div><ul class="chzn-results"><li id="blog_archive_url_chzn_o_0" class="active-result" style="">Select a month</li><li id="blog_archive_url_chzn_o_1" class="active-result result-selected" style="">September 2013 (1)</li><li id="blog_archive_url_chzn_o_2" class="active-result" style="">August 2013 (8)</li><li id="blog_archive_url_chzn_o_3" class="active-result" style="">July 2013 (3)</li><li id="blog_archive_url_chzn_o_4" class="active-result" style="">June 2013 (3)</li><li id="blog_archive_url_chzn_o_5" class="active-result" style="">May 2013 (9)</li><li id="blog_archive_url_chzn_o_6" class="active-result" style="">April 2013 (3)</li><li id="blog_archive_url_chzn_o_7" class="active-result" style="">March 2013 (4)</li><li id="blog_archive_url_chzn_o_8" class="active-result" style="">February 2013 (8)</li><li id="blog_archive_url_chzn_o_9" class="active-result" style="">January 2013 (2)</li><li id="blog_archive_url_chzn_o_10" class="active-result" style="">December 2012 (5)</li><li id="blog_archive_url_chzn_o_11" class="active-result" style="">November 2012 (3)</li><li id="blog_archive_url_chzn_o_12" class="active-result" style="">October 2012 (2)</li><li id="blog_archive_url_chzn_o_13" class="active-result" style="">September 2012 (5)</li><li id="blog_archive_url_chzn_o_14" class="active-result" style="">August 2012 (8)</li><li id="blog_archive_url_chzn_o_15" class="active-result" style="">July 2012 (3)</li><li id="blog_archive_url_chzn_o_16" class="active-result" style="">June 2012 (9)</li><li id="blog_archive_url_chzn_o_17" class="active-result" style="">May 2012 (6)</li><li id="blog_archive_url_chzn_o_18" class="active-result" style="">April 2012 (6)</li><li id="blog_archive_url_chzn_o_19" class="active-result" style="">March 2012 (14)</li><li id="blog_archive_url_chzn_o_20" class="active-result" style="">February 2012 (6)</li><li id="blog_archive_url_chzn_o_21" class="active-result" style="">January 2012 (6)</li><li id="blog_archive_url_chzn_o_22" class="active-result" style="">December 2011 (5)</li><li id="blog_archive_url_chzn_o_23" class="active-result" style="">November 2011 (7)</li><li id="blog_archive_url_chzn_o_24" class="active-result" style="">October 2011 (6)</li><li id="blog_archive_url_chzn_o_25" class="active-result" style="">September 2011 (9)</li><li id="blog_archive_url_chzn_o_26" class="active-result" style="">August 2011 (12)</li><li id="blog_archive_url_chzn_o_27" class="active-result" style="">July 2011 (7)</li><li id="blog_archive_url_chzn_o_28" class="active-result" style="">June 2011 (10)</li><li id="blog_archive_url_chzn_o_29" class="active-result" style="">May 2011 (9)</li><li id="blog_archive_url_chzn_o_30" class="active-result" style="">April 2011 (13)</li><li id="blog_archive_url_chzn_o_31" class="active-result" style="">March 2011 (8)</li><li id="blog_archive_url_chzn_o_32" class="active-result" style="">February 2011 (7)</li><li id="blog_archive_url_chzn_o_33" class="active-result" style="">January 2011 (6)</li><li id="blog_archive_url_chzn_o_34" class="active-result" style="">December 2010 (7)</li><li id="blog_archive_url_chzn_o_35" class="active-result" style="">November 2010 (7)</li><li id="blog_archive_url_chzn_o_36" class="active-result" style="">October 2010 (13)</li><li id="blog_archive_url_chzn_o_37" class="active-result" style="">September 2010 (9)</li><li id="blog_archive_url_chzn_o_38" class="active-result" style="">August 2010 (7)</li><li id="blog_archive_url_chzn_o_39" class="active-result" style="">July 2010 (7)</li><li id="blog_archive_url_chzn_o_40" class="active-result" style="">June 2010 (10)</li><li id="blog_archive_url_chzn_o_41" class="active-result" style="">May 2010 (7)</li><li id="blog_archive_url_chzn_o_42" class="active-result" style="">April 2010 (16)</li><li id="blog_archive_url_chzn_o_43" class="active-result" style="">March 2010 (11)</li><li id="blog_archive_url_chzn_o_44" class="active-result" style="">February 2010 (1)</li><li id="blog_archive_url_chzn_o_45" class="active-result" style="">January 2010 (5)</li><li id="blog_archive_url_chzn_o_46" class="active-result" style="">December 2009 (1)</li><li id="blog_archive_url_chzn_o_47" class="active-result" style="">November 2009 (4)</li><li id="blog_archive_url_chzn_o_48" class="active-result" style="">October 2009 (4)</li><li id="blog_archive_url_chzn_o_49" class="active-result" style="">September 2009 (2)</li><li id="blog_archive_url_chzn_o_50" class="active-result" style="">August 2009 (4)</li><li id="blog_archive_url_chzn_o_51" class="active-result" style="">July 2009 (3)</li><li id="blog_archive_url_chzn_o_52" class="active-result" style="">June 2009 (7)</li><li id="blog_archive_url_chzn_o_53" class="active-result" style="">May 2009 (4)</li><li id="blog_archive_url_chzn_o_54" class="active-result" style="">April 2009 (5)</li><li id="blog_archive_url_chzn_o_55" class="active-result" style="">March 2009 (14)</li><li id="blog_archive_url_chzn_o_56" class="active-result" style="">February 2009 (18)</li><li id="blog_archive_url_chzn_o_57" class="active-result" style="">January 2009 (3)</li><li id="blog_archive_url_chzn_o_58" class="active-result" style="">December 2008 (2)</li><li id="blog_archive_url_chzn_o_59" class="active-result" style="">November 2008 (3)</li><li id="blog_archive_url_chzn_o_60" class="active-result" style="">October 2008 (7)</li><li id="blog_archive_url_chzn_o_61" class="active-result" style="">September 2008 (9)</li><li id="blog_archive_url_chzn_o_62" class="active-result" style="">August 2008 (2)</li><li id="blog_archive_url_chzn_o_63" class="active-result" style="">July 2008 (7)</li><li id="blog_archive_url_chzn_o_64" class="active-result" style="">June 2008 (14)</li><li id="blog_archive_url_chzn_o_65" class="active-result" style="">May 2008 (5)</li><li id="blog_archive_url_chzn_o_66" class="active-result" style="">April 2008 (14)</li><li id="blog_archive_url_chzn_o_67" class="active-result" style="">March 2008 (6)</li><li id="blog_archive_url_chzn_o_68" class="active-result" style="">February 2008 (5)</li><li id="blog_archive_url_chzn_o_69" class="active-result" style="">January 2008 (6)</li><li id="blog_archive_url_chzn_o_70" class="active-result" style="">December 2007 (5)</li><li id="blog_archive_url_chzn_o_71" class="active-result" style="">November 2007 (5)</li><li id="blog_archive_url_chzn_o_72" class="active-result" style="">October 2007 (7)</li><li id="blog_archive_url_chzn_o_73" class="active-result" style="">September 2007 (2)</li><li id="blog_archive_url_chzn_o_74" class="active-result" style="">August 2007 (7)</li><li id="blog_archive_url_chzn_o_75" class="active-result" style="">July 2007 (4)</li><li id="blog_archive_url_chzn_o_76" class="active-result" style="">June 2007 (3)</li><li id="blog_archive_url_chzn_o_77" class="active-result" style="">April 2007 (1)</li></ul></div></div></span>
+		<h3 class="hidden-phone">Categories</h3>
+		<ul class="hidden-phone">
+<li><a href="http://www.intridea.com/blog/tag/rails">Rails <span>(91)</span></a></li>
+		    <li><a href="http://www.intridea.com/blog/tag/ruby">Ruby <span>(76)</span></a></li>
+		    <li><a href="http://www.intridea.com/blog/tag/announcements">Announcements <span>(48)</span></a></li>
+		    <li><a href="http://www.intridea.com/blog/tag/events">Events <span>(42)</span></a></li>
+		    <li><a href="http://www.intridea.com/blog/tag/open%20source">Open source <span>(36)</span></a></li>
+		    <li><a href="http://www.intridea.com/blog/tag/design">Design <span>(31)</span></a></li>
+		    <li><a href="http://www.intridea.com/blog/tag/mobile">Mobile <span>(28)</span></a></li>
+		    <li><a href="http://www.intridea.com/blog/tag/development">Development <span>(26)</span></a></li>
+		    <li><a href="http://www.intridea.com/blog/tag/tips">Tips <span>(24)</span></a></li>
+		    <li><a href="http://www.intridea.com/blog/tag/conferences">Conferences <span>(23)</span></a></li>
+	  </ul>
+<span class="visible-phone sidebar_item categories">
+	    <h3>Categories</h3>	
+		<select style="display: none;" class="chzn_select chzn-done" id="blog_category_url" name="blog_category_url"><option selected="selected" value="/blog/tag/rails">Rails (93)</option>
+<option value="/blog/tag/ruby">Ruby (77)</option>
+<option value="/blog/tag/announcements">Announcements (48)</option>
+<option value="/blog/tag/events">Events (43)</option>
+<option value="/blog/tag/open%20source">Open source (36)</option>
+<option value="/blog/tag/design">Design (32)</option>
+<option value="/blog/tag/mobile">Mobile (28)</option>
+<option value="/blog/tag/development">Development (26)</option>
+<option value="/blog/tag/conferences">Conferences (24)</option>
+<option value="/blog/tag/tips">Tips (24)</option></select><div style="width: 0px;" class="chzn-container chzn-container-single" id="blog_category_url_chzn"><a href="javascript:void(0)" class="chzn-single"><span>Rails (93)</span><div><b></b></div></a><div class="chzn-drop" style="left: -9000px; width: 0px; top: 0px;"><div style="" class="chzn-search"><input style="width: 0px;" autocomplete="off" type="text"></div><ul class="chzn-results"><li id="blog_category_url_chzn_o_0" class="active-result result-selected" style="">Rails (93)</li><li id="blog_category_url_chzn_o_1" class="active-result" style="">Ruby (77)</li><li id="blog_category_url_chzn_o_2" class="active-result" style="">Announcements (48)</li><li id="blog_category_url_chzn_o_3" class="active-result" style="">Events (43)</li><li id="blog_category_url_chzn_o_4" class="active-result" style="">Open source (36)</li><li id="blog_category_url_chzn_o_5" class="active-result" style="">Design (32)</li><li id="blog_category_url_chzn_o_6" class="active-result" style="">Mobile (28)</li><li id="blog_category_url_chzn_o_7" class="active-result" style="">Development (26)</li><li id="blog_category_url_chzn_o_8" class="active-result" style="">Conferences (24)</li><li id="blog_category_url_chzn_o_9" class="active-result" style="">Tips (24)</li></ul></div></div></span>
+	  <a href="" class="hiring">We're Hiring</a>
+	</div>
+	<div class="main benefits hidden-phone">
+			<h3>Looking for a new gig?</h3>
+			<p>
+				Obsessed with good code and beautiful design? Do you value form as 
+much as function? We do too. And we're looking for people like you.
+			</p>
+			<h4>Intridean Benefits</h4>
+			<ul>
+<li>Flexible Work Schedule</li>
+				<li>Full Coverage Insurance</li>
+				<li>Sponsored Events</li>
+				<li>Company Retreats</li>
+				<li>Competitive Salary</li>
+			</ul>
+<a href="http://www.intridea.com/careers" class="btn green block large">View Open Positions</a>
+	</div>
+</aside>
+</div>
