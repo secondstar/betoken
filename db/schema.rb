@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130916183532) do
+ActiveRecord::Schema.define(version: 20130921022209) do
 
   create_table "posts", force: true do |t|
     t.string   "title"
@@ -20,6 +20,24 @@ ActiveRecord::Schema.define(version: 20130916183532) do
     t.datetime "pubdate"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "projects", force: true do |t|
+    t.string   "title"
+    t.text     "body"
+    t.text     "logo_url"
+    t.text     "image_url"
+    t.text     "challenge"
+    t.text     "result"
+    t.text     "quote"
+    t.string   "quotable_person"
+    t.string   "quotable_positon_and_company"
+    t.string   "one_line_project_description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "slogan"
+    t.string   "category"
+    t.text     "summary_image_url"
   end
 
 end

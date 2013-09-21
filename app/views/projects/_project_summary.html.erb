@@ -1,0 +1,8 @@
+<li class="element  <%= project_summary.category %>">
+  <a href="/projects/<%= project_summary.id %>" gt-evt="click" gt-cat="portfolio" gt-act="clients#click" gt-lbl="gallery">
+	<%= image_tag project_summary.image_url, :title => "Large" %>
+	<h4>
+      <strong><%= project_summary.title %></strong> <%= project_summary.one_line_project_description %>
+    </h4>
+  </a>
+</li>

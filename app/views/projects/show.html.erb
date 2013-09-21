@@ -1,0 +1,54 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @project.title %>
+</p>
+
+<p>
+  <strong>Body:</strong>
+  <%= @project.body %>
+</p>
+
+<p>
+  <strong>Logo url:</strong>
+  <%= @project.logo_url %>
+</p>
+
+<p>
+  <strong>Image url:</strong>
+  <%= @project.image_url %>
+</p>
+
+<p>
+  <strong>Challenge:</strong>
+  <%= @project.challenge %>
+</p>
+
+<p>
+  <strong>Result:</strong>
+  <%= @project.result %>
+</p>
+
+<p>
+  <strong>Quote:</strong>
+  <%= @project.quote %>
+</p>
+
+<p>
+  <strong>Quotable person:</strong>
+  <%= @project.quotable_person %>
+</p>
+
+<p>
+  <strong>Quotable positon and company:</strong>
+  <%= @project.quotable_positon_and_company %>
+</p>
+
+<p>
+  <strong>One line project description:</strong>
+  <%= @project.one_line_project_description %>
+</p>
+
+<%= link_to 'Edit', edit_project_path(@project) %> |
+<%= link_to 'Back', projects_path %>
