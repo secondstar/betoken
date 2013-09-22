@@ -1,4 +1,5 @@
 Represent::Application.routes.draw do
+  get "contact/new"
   get "portfolio/index"
   resources :projects
 
@@ -6,6 +7,8 @@ Represent::Application.routes.draw do
   get "welcome/index"
   get '/blog', to: 'blog#index'
   get '/portfolio', to: 'projects#index'
+  get '/contact', to: "contact#new"
+  
   resources :posts
   # resources :blogs
 
