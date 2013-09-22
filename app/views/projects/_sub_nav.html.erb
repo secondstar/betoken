@@ -10,7 +10,7 @@
 
 	  <div class="visible-tablet styled-select">
 	      <select id="selP8I" class="chzn_select tablet_subnav portfolio_filter_main chzn-done" style="width: 160px; display: none;"> 
-	          <option selected="selected">Mashable</option>
+	          <option selected="selected"><%= sub_nav.title %></option>
 	          <option value="all" data-filter="*">Show All</option>
 	    		<option value="web">Web</option>
 	    		<option value="mobile">Mobile</option>
@@ -18,7 +18,7 @@
 		  </select>
 			<div style="width: 160px;" class="chzn-container chzn-container-single" id="selP8I_chzn">
 				<a href="javascript:void(0)" class="chzn-single">
-					<span>Mashable</span>
+					<span><%= sub_nav.title %></span>
 					<div>
 						<b></b>
 					</div>
@@ -28,7 +28,7 @@
 						<input style="width: 125px;" autocomplete="off" type="text">
 					</div>
 					<ul class="chzn-results">
-						<li id="selP8I_chzn_o_0" class="active-result result-selected" style="">Mashable</li>
+						<li id="selP8I_chzn_o_0" class="active-result result-selected" style=""><%= sub_nav.title %></li>
 						<li id="selP8I_chzn_o_1" class="active-result" style="">Show All</li>
 						<li id="selP8I_chzn_o_2" class="active-result" style="">Web</li>
 						<li id="selP8I_chzn_o_3" class="active-result" style="">Mobile</li>
