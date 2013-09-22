@@ -56,7 +56,8 @@ group :development, :test do
 end
 
 group :production do
-  gem "thin", "~> 1.5.1"
+  gem 'unicorn'
+  
 end
 
 # Use ActiveModel has_secure_password
