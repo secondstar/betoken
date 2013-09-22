@@ -1,3 +1,5 @@
+ruby '2.0.0'
+
 source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -48,8 +50,8 @@ group :development, :test do
   gem 'guard-passenger'
   gem 'guard-bundler'
   gem "guard-coffeescript", "~> 1.3.3"
-  gem 'rb-inotify' if RUBY_PLATFORM =~ /linux/i
-  gem 'libnotify' if RUBY_PLATFORM =~ /linux/i
+  # gem 'rb-inotify' if RUBY_PLATFORM =~ /linux/i
+  # gem 'libnotify' if RUBY_PLATFORM =~ /linux/i
   gem 'minitest-spec-rails'
   # gem 'activerecord-nulldb-adapter', :git => "git://github.com/nulldb/nulldb.git"  
   gem "database_cleaner", "~> 1.1.1"
