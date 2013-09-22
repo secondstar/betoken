@@ -1,0 +1,24 @@
+<!-- tablet info column -->
+<div class="visible-tablet tablet-port">
+
+	<div class="description">
+		<span class="meta-logo">
+			<%= image_tag "http://fpoimg.com/279x62?text=logo_url+it", :title => "Small" %>
+			
+		</span>
+		<h3 class="proj-desc"><%= tablet_info_column.one_line_project_description %></h3>
+		<p><%= tablet_info_column.body %></p>
+
+	</div>
+	<div class="span-1">
+
+		<dl class="proj-meta">
+
+			<dt>Challenge</dt>
+			<dd><%= tablet_info_column.challenge %></dd>
+
+			<dt>Result</dt>
+			<dd><%= tablet_info_column.result %></dd>
+		</dl>	  		
+	</div>
+</div>

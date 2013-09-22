@@ -1,115 +1,13 @@
 <div id="content" class="main portfolio clearfix mashable_casestudy">
-	<div id="sub_nav" class="portfolio_nav">
-  
-  <ul class="visible-desktop nav clearfix">
-	    <li><a id="link_all" value="all" href="/portfolio/">Show All</a></li>
-	    <li><a id="link_web" value="web" href="/portfolio/#web">Web</a></li>
-	    <li><a id="link_mobile" value="mobile" href="/portfolio/#mobile">Mobile</a></li>
-	    <li><a id="link_labs" value="labs" href="/portfolio/#labs">Labs</a></li>
-  </ul>
-
-
-  <div class="visible-tablet styled-select">
-      <select id="selP8I" class="chzn_select tablet_subnav portfolio_filter_main chzn-done" style="width: 160px; display: none;"> 
-          <option selected="selected">Mashable</option>
-          <option value="all" data-filter="*">Show All</option>
-    		<option value="web">Web</option>
-    		<option value="mobile">Mobile</option>
-    		<option value="labs">Labs</option>						
-	    </select><div style="width: 160px;" class="chzn-container chzn-container-single" id="selP8I_chzn"><a href="javascript:void(0)" class="chzn-single"><span>Mashable</span><div><b></b></div></a><div class="chzn-drop" style="left: -9000px; width: 160px; top: 0px;"><div style="" class="chzn-search"><input style="width: 125px;" autocomplete="off" type="text"></div><ul class="chzn-results"><li id="selP8I_chzn_o_0" class="active-result result-selected" style="">Mashable</li><li id="selP8I_chzn_o_1" class="active-result" style="">Show All</li><li id="selP8I_chzn_o_2" class="active-result" style="">Web</li><li id="selP8I_chzn_o_3" class="active-result" style="">Mobile</li><li id="selP8I_chzn_o_4" class="active-result" style="">Labs</li></ul></div></div>
-    	<div style="display:none">
-    	  <li><a id="link_all" value="all" href="/portfolio/">Show All</a></li>
-    	  <li><a id="link_web" value="web" href="/portfolio/#web">Web</a></li>
-    	  <li><a id="link_mobile" value="mobile" href="/portfolio/#mobile">Mobile</a></li>
-    	  <li><a id="link_labs" value="labs" href="/portfolio/#labs">Labs</a></li>
-      </div>
-  </div>
-  
-  </div>
+	<%= render :partial => "sub_nav", :object => @project %>
     <div id="small_case_container" class="clearfix">	
-	<!-- desktop info column-->
-	<div class="span-1 alpha visible-desktop">
+		<%= render :partial => 'desktop_info_column', :object => @project %>
 
-		<!-- <img alt="Small" src="http://fpoimg.com/279x62?text=logo+url"> -->
-		<%= image_tag "http://fpoimg.com/279x62?text=logo_url+it", :title => "Small" %>
-		<h3 class="proj-desc"><%= @project.one_line_project_description %></h3>
-		<dl class="proj-meta">
-		  
-			<dt>Challenge</dt>
-			<dd><%= @project.challenge %></dd>
-			
-			<dt>Result</dt>
-			<dd><%= @project.result %></dd>
-		</dl>
-
-			<blockquote><%= @project.quote %>
-<br>
-<br>
-<em><%= @project.quotable_person %>, <%= @project.quotable_positon_and_company %></em>
-			</blockquote>
-
-		<a href="https://github.com/intridea/omniauth" class="btn gray block" id="git-omni"><img alt="Github" src="http://www.intridea.com/assets/github-861739c5bf5c1f1104e9b8d26e4b676e.png"></a>
-
-	</div>
-	
-	<!-- tablet image/description-->
-	<div class="span-3 omega visible-tablet">
-			<div class="port-photo">
-				<!-- <img alt="Medium" src="http://fpoimg.com/578x391?text=port-photo+tablet_image_description"> -->
-				<%= image_tag "http://fpoimg.com/578x391?text=port-photo+desktop/phone+hidden-tablet+it", :title => "Medium" %>
-				
-			</div>
-
-		<div class="visible-desktop case-study-description">
-		  <p><%= @project.body %></p>
-
-		</div>
-		
-		<!-- tablet info column -->
-		<div class="visible-tablet tablet-port">
-
-			<div class="description">
-				<span class="meta-logo">
-					<%= image_tag "http://fpoimg.com/279x62?text=logo_url+it", :title => "Small" %>
-					
-				</span>
-				<h3 class="proj-desc"><%= @project.one_line_project_description %></h3>
-				<p><%= @project.body %></p>
-
-			</div>
-			<div class="span-1">
-
-				<dl class="proj-meta">
-	
-	  				<dt>Challenge</dt>
-	  				<dd><%= @project.challenge %></dd>
-	
-	  				<dt>Result</dt>
-	  				<dd><%= @project.result %></dd>
-	  			</dl>	  		
-			</div>
-		</div>
-	</div>
-	
-	<!-- desktop/phone image/description-->
-	<div class="span-2 omega hidden-tablet">
-			<div class="port-photo">
-				<!-- <img alt="Medium" src="http://fpoimg.com/578x391?text=port-photo+desktop/phone+hidden-tablet"> -->
-				<%= image_tag "http://fpoimg.com/578x391?text=port-photo+desktop/phone+hidden-tablet+it", :title => "Medium" %>
-				
-			</div>
-
-		<div class="visible-phone case-study-title">
-				<h2><%= @project.title %></h2>
-				<h3 class="proj-desc"><%= @project.one_line_project_description %></h3>
-		</div>
-
-		<div class="hidden-tablet case-study-description">
-		  <p><%= @project.body %></p>
-
-		</div>
+		<%= render :partial => "tablet_image_description", :object => @project %>
+		<%= render :partial => "tablet_info_column", :object => @project %>
 	
 	</div>
+	<%= render :partial => "desktop_phone_image_description", :object => @project %>
 </div>
 
 </div>
