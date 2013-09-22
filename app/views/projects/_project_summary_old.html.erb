@@ -1,0 +1,56 @@
+<li class="element  mobile">
+  <a href="/projects/<%= project_summary.id %>" gt-evt="click" gt-cat="portfolio" gt-act="clients#click" gt-lbl="gallery">
+	<%= link_to (image_tag("large_010.png", :title => "Large")), model_path(@project) %>
+	<%# image_tag "large_010.png", :title => "Large" %>
+	<h4>
+      <strong><%= project.title %></strong> <%= project.slogan %>
+    </h4>
+  </a>
+</li>
+
+
+<h1>Listing projects</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Body</th>
+      <th>Logo url</th>
+      <th>Image url</th>
+      <th>Challenge</th>
+      <th>Result</th>
+      <th>Quote</th>
+      <th>Quotable person</th>
+      <th>Quotable positon and company</th>
+      <th>One line project description</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @projects.each do |project| %>
+      <tr>
+        <td><%= project.title %></td>
+        <td><%= project.body %></td>
+        <td><%= project.logo_url %></td>
+        <td><%= project.image_url %></td>
+        <td><%= project.challenge %></td>
+        <td><%= project.result %></td>
+        <td><%= project.quote %></td>
+        <td><%= project.quotable_person %></td>
+        <td><%= project.quotable_positon_and_company %></td>
+        <td><%= project.one_line_project_description %></td>
+        <td><%= link_to 'Show', project %></td>
+        <td><%= link_to 'Edit', edit_project_path(project) %></td>
+        <td><%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Project', new_project_path %>

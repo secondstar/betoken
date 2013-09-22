@@ -1,7 +1,11 @@
 Represent::Application.routes.draw do
+  get "portfolio/index"
+  resources :projects
+
   get "blog/index"
   get "welcome/index"
   get '/blog', to: 'blog#index'
+  get '/portfolio', to: 'projects#index'
   resources :posts
   # resources :blogs
 
