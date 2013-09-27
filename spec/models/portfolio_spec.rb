@@ -1,45 +1,45 @@
-require_relative '../spec_helper_lite'
-require_relative '../../app/models/blog'
-require 'ostruct'
+# spec/models/portfolio_spec.rb
+require 'minitest/autorun'
+require_relative '../../app/models/portfolio'
 
-describe Blog do
+describe Portfolio do
   before do
-    @entries = []
-    @it = Blog.new(->{@entries})
+    @it = Portfolio.new
   end
 
-  it "should have no entries" do
-    @it.entries.must_be_empty
+  it "should have no undertakings" do
+    @it.undertakings.must_be_empty
   end
-
-  describe "#new_entry" do
+  
+  describe "#new_undertaking" do
     before do
-      @new_post = OpenStruct.new
-      @it.post_maker = ->{ @new_post }
+      @new_project = OpenStruct.new
+      @it.project_maker = ->{ @new_project }
     end
-
-    it "should return a new post" do
-      @it.new_post.must_equal @new_post
+    
+    it "should return a new project" do
+      @it.new_project.must_equal @new_project
     end
-
-    it "should set the post's blog reference to itself" do
-      @it.new_post.blog.must_equal(@it)
+    
+    it "sets the project's project reference to itself" do
+      @it.new_project.portfolio.must_equal(@it)
     end
-
-    it "should accept an attribute hash on behalf of the post maker" do
-      post_maker = MiniTest::Mock.new
-      post_maker.expect(:call, @new_post, [{:x => 42, :y => 'z'}])
-      @it.post_maker = post_maker
-      @it.new_post(:x => 42, :y => 'z')
-      post_maker.verify
+    
+    it "should accept an attribute hash on behalf of the project maker" do
+      project_maker = MiniTest::Mock.new
+      project_maker.expect(:call, @new_project, [{:x => 42, :y => 'z'}])
+      @it.project_maker = project_maker
+      @it.new_project(:x => 42, :y => 'z')
+      # post_maker.verify  ## need to code in title verification
     end
   end
-
-  describe "#add_entry" do
-    it "should add the entry to the blog" do
-      entry = stub!
-      mock(entry).save
-      @it.add_entry(entry)
+  
+  
+  describe "#add_undertaking" do
+    it "should add the undertaking to the portfolio" do
+      undertaking = Object.new
+      @it.add_undertaking(undertaking)
+      @it.undertakings.must_include(undertaking)
     end
   end
 end

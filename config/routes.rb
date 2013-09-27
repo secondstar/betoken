@@ -9,7 +9,7 @@ Represent::Application.routes.draw do
   get "blog/index"
   get "welcome/index"
   get '/blog', to: 'blog#index'
-  get '/portfolio', to: 'projects#index'
+  get '/portfolio', to: 'portfolio#index'
   get '/contact', to: "contact#new"
   get '/services', to: "services#index"
   get '/community', to: "community#index"
