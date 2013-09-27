@@ -30,7 +30,7 @@ describe Portfolio do
       project_maker.expect(:call, @new_project, [{:x => 42, :y => 'z'}])
       @it.project_maker = project_maker
       @it.new_project(:x => 42, :y => 'z')
-      # post_maker.verify  ## need to code in title verification
+      project_maker.verify  ## need to code in title verification
     end
   end
   

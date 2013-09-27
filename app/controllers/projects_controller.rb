@@ -16,7 +16,7 @@ class ProjectsController < ApplicationController
 
   # GET /projects/new
   def new
-    @project = Project.new
+    @project = @portfolio.new_project
   end
 
   # GET /projects/1/edit
@@ -26,17 +26,20 @@ class ProjectsController < ApplicationController
   # POST /projects
   # POST /projects.json
   def create
-    @project = Project.new(project_params)
-
-    respond_to do |format|
-      if @project.save
-        format.html { redirect_to @project, notice: 'Project was successfully created.' }
-        format.json { render action: 'show', status: :created, location: @project }
-      else
-        format.html { render action: 'new' }
-        format.json { render json: @project.errors, status: :unprocessable_entity }
-      end
-    end
+    @project = @portfolio.new_project(params[:project])
+    @project.publish
+    redirect_to root_path, notice: "Project added!"
+    # @project = Project.new(project_params)
+    # 
+    # respond_to do |format|
+    #   if @project.save
+    #     format.html { redirect_to @project, notice: 'Project was successfully created.' }
+    #     format.json { render action: 'show', status: :created, location: @project }
+    #   else
+    #     format.html { render action: 'new' }
+    #     format.json { render json: @project.errors, status: :unprocessable_entity }
+    #   end
+    # end
   end
 
   # PATCH/PUT /projects/1
