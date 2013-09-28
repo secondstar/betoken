@@ -27,19 +27,16 @@ class ProjectsController < ApplicationController
   # POST /projects.json
   def create
     @project = @portfolio.new_project(params[:project])
-    @project.publish
-    redirect_to portfolio_path, notice: "Project added!"
-    # @project = Project.new(project_params)
-    # 
-    # respond_to do |format|
-    #   if @project.save
-    #     format.html { redirect_to @project, notice: 'Project was successfully created.' }
-    #     format.json { render action: 'show', status: :created, location: @project }
-    #   else
-    #     format.html { render action: 'new' }
-    #     format.json { render json: @project.errors, status: :unprocessable_entity }
-    #   end
-    # end
+    
+    respond_to do |format|
+      if @project.publish
+        format.html { redirect_to portfolio_path, notice: 'Project was successfully created.' }
+        format.json { render action: 'show', status: :created, location: @project }
+      else
+        format.html { render action: 'new' }
+        format.json { render json: @project.errors, status: :unprocessable_entity }
+      end
+    end
   end
 
   # PATCH/PUT /projects/1

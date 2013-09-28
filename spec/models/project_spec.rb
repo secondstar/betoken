@@ -1,8 +1,6 @@
 require 'minitest/autorun'
 require_relative '../spec_helper_lite'
-
-stub_module 'ActiveModel::Conversion'
-stub_module 'ActiveModel::Naming' 
+require_relative '../../app/models/project'
 
 describe Project do
   before do
@@ -38,23 +36,37 @@ describe Project do
  
   describe "#publish" do
     before do
-      @portfolio = MiniTest::Mock.new
+      @portfolio = stub!
       @it.portfolio = @portfolio
+      @it.title = "TITLE"
     end
- 
-    after do
-      @portfolio.verify
-    end
- 
+  
     it "should add the project to the portfolio" do
-      @portfolio.expect :add_undertaking, nil, [@it]
+      mock(@portfolio).add_project(@it)
       @it.publish
+    end
+    
+    it "should return truthy on success" do
+      assert(@it.publish)
+    end
+    
+    describe "given an invalid project" do
+      before do @it.title = nil end
+      
+      it "should not add the project to the portfolio" do
+        dont_allow(@portfolio).add_entry(@it)
+      end
+      
+      it "should return false" do
+        refute(@it.publish)
+      end
     end
   end
   
 
   describe "#pubdate" do
-
+    before do @it.title = "TITLE" end
+    
     describe "#before publishing" do
       it "should be blank" do
         @it.pubdate.must_be_nil
@@ -79,5 +91,15 @@ describe Project do
       end
     end
   end
-    
+  it "should not be valid with a blank title" do
+    [nil,""," "].each do |bad_title|
+      @it.title = bad_title
+      refute(@it.valid?)
+    end
+  end
+  
+  it "should be valid with a non-blank title" do
+    @it.title = "x"
+    assert(@it.valid?)
+  end  
 end
