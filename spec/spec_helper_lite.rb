@@ -7,7 +7,7 @@ require 'active_support/deprecation'
 # require 'activerecord-nulldb-adapter'
  
 class MiniTest::Unit::TestCase
-  # include RR::Adapters::MiniTest
+  include RR::Adapters::MiniTest
 end
  
 def stub_module(full_name, &block)

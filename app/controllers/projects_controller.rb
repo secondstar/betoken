@@ -28,7 +28,7 @@ class ProjectsController < ApplicationController
   def create
     @project = @portfolio.new_project(params[:project])
     @project.publish
-    redirect_to root_path, notice: "Project added!"
+    redirect_to portfolio_path, notice: "Project added!"
     # @project = Project.new(project_params)
     # 
     # respond_to do |format|
