@@ -8,7 +8,7 @@ class Project
 
   validates :title, :presence => true
 
-  attr_accessor :portfolio, :title, :body, :pubdate
+  attr_accessor :portfolio, :title, :body, :image_url, :pubdate
 
   def initialize(attrs={})
     attrs.each do |k,v| send("#{k}=",v) end 

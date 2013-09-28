@@ -1,6 +1,8 @@
 <li class="element  mobile">
     <a href="/projects/<%= undertaking.title %>" gt-evt="click" gt-cat="portfolio" gt-act="clients#click" gt-lbl="gallery">
-      <img alt="Large" src="http://placehold.it/280x186"><h4>
+		<%= image_tag undertaking.image_url, :title => "go large" %>
+      <!-- <img alt="Large" src="http://placehold.it/280x186">-->
+	  <h4> 
         <strong><%= undertaking.title %> 
 		    <p><time pubdate="pubdate"><%= undertaking.pubdate %></time></p>
 		</strong> 
