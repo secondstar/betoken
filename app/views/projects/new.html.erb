@@ -8,11 +8,21 @@
 	<%# f.text_area :body %>
 	<%# f.submit %>
 <%# end %>
-
+<!-- one_line_project_description -->
 <h1>New project</h1>
 <%= form_for @project do |f| %>
   <%# f.error_messages %>
-  <%= f.text_field :title %>
-  <%= f.text_area :body %>
+
+<%= label :title, "Title" %>
+<%= f.text_field :title %>
+
+<%= label :one_line_project_description, "Tagline" %>
+<%= f.text_field :one_line_project_description %>
+
+<%= label :body, "Main Message" %>
+
+<%= f.text_area :body %>
+<%= label :image_url, "Picture URL:" %>
+<%= f.text_field :image_url %>
   <%= f.submit %>
 <% end %>

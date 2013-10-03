@@ -1,11 +1,11 @@
 # spec/models/portfolio_spec.rb
-require 'minitest/autorun'
 require_relative '../spec_helper_lite'
 require_relative '../../app/models/portfolio'
 
 describe Portfolio do
   before do
-    @it = Portfolio.new
+    @undertakings =[]
+    @it = Portfolio.new(->{@undertakings})
   end
 
   it "should have no undertakings" do
@@ -39,36 +39,9 @@ describe Portfolio do
   describe "#add_undertaking" do
     it "should add the undertaking to the portfolio" do
       undertaking = stub!
+      mock(undertaking).save
       @it.add_undertaking(undertaking)
-      @it.undertakings.must_include(undertaking)
-    end
-  end
-
-  describe "undertakings" do
-    def stub_undertaking_with_date(date)
-      OpenStruct.new(:pubdate => DateTime.parse(date))
-    end
-    
-    it "should be sorted in reverse-chronological order" do
-      oldest = stub_undertaking_with_date("2011-09-09")
-      newest = stub_undertaking_with_date("2011-09-11")
-      middle = stub_undertaking_with_date("2011-09-10")
       
-      @it.add_undertaking(oldest)
-      @it.add_undertaking(newest)
-      @it.add_undertaking(middle)
-      @it.undertakings.must_equal([newest,middle,oldest])
     end
-    
-    it "should be limited to 10 items" do
-      10.times do |i|
-        @it.add_undertaking(stub_undertaking_with_date("2011-09-#{i+1}"))
-      end
-      oldest = stub_undertaking_with_date("2011-08-30")
-      @it.add_undertaking(oldest)
-      @it.undertakings.size.must_equal(10)
-      @it.undertakings.wont_include(oldest)
-    end
-  end
-  
+  end  
 end

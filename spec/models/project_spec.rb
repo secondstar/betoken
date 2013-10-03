@@ -1,32 +1,16 @@
-require 'minitest/autorun'
+require 'activerecord-nulldb-adapter'
 require_relative '../spec_helper_lite'
 require_relative '../../app/models/project'
 
 describe Project do
+  include SpecHelpers
   before do
-    @it = Project.new
+    @it = Project.new(:title => "TITLE")
+    @ar = @it
+    @ar_class = Project
   end
  
-  it "should support setting attributes in the initializer" do
-    it = Project.new(:title => "mytitle", :body => "mybody")
-    it.title.must_equal "mytitle"
-    it.body.must_equal "mybody"
-  end
- 
-  it "should start with blank attributes" do
-    @it.title.must_be_nil
-    @it.body.must_be_nil
-  end
- 
-  it "should support reading and writing a title" do
-    @it.title = "foo"
-    @it.title.must_equal "foo"
-  end
- 
-  it "should support reading and writing a project body" do
-    @it.body = "foo"
-    @it.body.must_equal "foo"
-  end
+   
  
   it "should support reading and writing a portfolio reference" do
     portfolio = Object.new
@@ -38,7 +22,7 @@ describe Project do
     before do
       @portfolio = stub!
       @it.portfolio = @portfolio
-      @it.title = "TITLE"
+      stub(@ar).valid?{true}
     end
   
     it "should add the project to the portfolio" do
@@ -51,7 +35,9 @@ describe Project do
     end
     
     describe "given an invalid project" do
-      before do @it.title = nil end
+      before do
+        stub(@ar).valid?{false}
+      end
       
       it "should not add the project to the portfolio" do
         dont_allow(@portfolio).add_entry(@it)
@@ -65,8 +51,6 @@ describe Project do
   
 
   describe "#pubdate" do
-    before do @it.title = "TITLE" end
-    
     describe "#before publishing" do
       it "should be blank" do
         @it.pubdate.must_be_nil
@@ -83,7 +67,10 @@ describe Project do
       end
       
       it "should be a datetime" do
-        @it.pubdate.class.must_equal(DateTime)
+        assert(@it.pubdate.is_a?(DateTime) ||
+                @it.pubdate.is_a?(ActiveSupport::TimeWithZone),
+                "pubdate must be a datetime of some kind."
+        )
       end
       
       it "should be the current time" do
@@ -91,15 +78,5 @@ describe Project do
       end
     end
   end
-  it "should not be valid with a blank title" do
-    [nil,""," "].each do |bad_title|
-      @it.title = bad_title
-      refute(@it.valid?)
-    end
-  end
-  
-  it "should be valid with a non-blank title" do
-    @it.title = "x"
-    assert(@it.valid?)
-  end  
+
 end

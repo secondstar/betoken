@@ -1,26 +1,15 @@
 require 'date'
-require 'active_model'
+require 'active_record'
 
-class Project
-  extend ActiveModel::Naming
-  include ActiveModel::Conversion
-  include ActiveModel::Validations
-
+class Project < ActiveRecord::Base
   validates :title, :presence => true
 
-  attr_accessor :portfolio, :title, :body, :pubdate
+  attr_accessor :portfolio
 
-  def initialize(attrs={})
-    attrs.each do |k,v| send("#{k}=",v) end 
-  end
-
-  def persisted?
-    false
-  end
-
+# pubdate was missing
   def publish(clock=DateTime)
     return false unless valid?
     self.pubdate = clock.now
-    portfolio.add_undertaking(self)
+    @portfolio.add_undertaking(self)
   end
 end
