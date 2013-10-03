@@ -16,28 +16,41 @@ class ProjectsController < ApplicationController
 
   # GET /projects/new
   def new
-    @project = Project.new
+    @project = @portfolio.new_project
   end
 
-  # GET /projects/1/edit
-  def edit
-  end
+  # # GET /projects/1/edit
+  # def edit
+  # end
 
   # POST /projects
   # POST /projects.json
   def create
-    @project = Project.new(project_params)
-
+    @project = @portfolio.new_project(project_params)    
+    # @project = @portfolio.new_project(params.require(:project).permit(:title, :body, :image_url))
+    
     respond_to do |format|
-      if @project.save
-        format.html { redirect_to @project, notice: 'Project was successfully created.' }
-        format.json { render action: 'show', status: :created, location: @project }
+      if @project.publish
+        format.html { redirect_to portfolio_path, notice: 'Project was successfully created.' }
+        # format.json { render action: 'show', status: :created, location: @project }
       else
         format.html { render action: 'new' }
-        format.json { render json: @project.errors, status: :unprocessable_entity }
+        # format.json { render json: @project.errors, status: :unprocessable_entity }
       end
     end
   end
+
+
+  # def create
+  #   @post = @blog.new_post(params.require(:post).permit(:title, :body, :image_url))
+  #   if @post.publish
+  #     redirect_to root_url,
+  #           tadah: "Post successfully created"
+  #   else
+  #     flash.now[:error] = "Whoops, the highlighted fields need better input."
+  #     render action: "new"
+  #   end
+  # end
 
   # PATCH/PUT /projects/1
   # PATCH/PUT /projects/1.json
@@ -71,6 +84,8 @@ class ProjectsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def project_params
-      params.require(:project).permit(:title, :body, :logo_url, :image_url, :challenge, :result, :quote, :quotable_person, :quotable_positon_and_company, :one_line_project_description, :summary_image_url, :category)
+      params.require(:project).permit(:title, :body, :logo_url, :image_url, :challenge, 
+        :result, :quote, :quotable_person, :quotable_positon_and_company, :one_line_project_description, 
+        :summary_image_url, :category, :pubdate)
     end
 end

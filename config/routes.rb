@@ -9,14 +9,13 @@ Represent::Application.routes.draw do
   get "blog/index"
   get "welcome/index"
   get '/blog', to: 'blog#index'
-  get '/portfolio', to: 'projects#index'
+  get '/portfolio', to: 'portfolio#index'
   get '/contact', to: "contact#new"
   get '/services', to: "services#index"
   get '/community', to: "community#index"
   get '/about', to: "about#index"
   
   resources :posts
-  # resources :blogs
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
