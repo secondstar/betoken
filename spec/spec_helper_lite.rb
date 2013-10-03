@@ -29,25 +29,14 @@ def stub_class_or_module(full_name, kind, &block)
 end
  
 module SpecHelpers
-  # def setup_nulldb
-  #   if Object.const_defined?(:ActiveRecord)
-  #     unless ActiveRecord::Base.connected?
-  #       unless Object.const_defined?(:Rails)
-  #         Object.const_set(:Rails, Module.new)        
-  #       end
-  #       unless Rails.respond_to?(:root)
-  #         def Rails.root
-  #           File.expand_path('..', File.dirname(__FILE__))
-  #         end
-  #       end
-  #       @old_ar_cxn = ActiveRecord::Base.connection_pool.spec
-  #       ActiveRecord::Base.establish_connection :adapter => :nulldb
-  #     end
-  #   end
-  # end
-  #  
-  # def teardown_nulldb
-  #   ActiveRecord::Base.establish_connection(@old_ar_cxn)
-  # end
+  def setup_nulldb
+    schema_path = File.expand_path('../db/schema.rb', File.dirname(__FILE__))
+    NullDB.nullify(:schema => schema_path)
+  end
+ 
+  def teardown_nulldb
+    NullDB.restore
+  end
+
   
 end

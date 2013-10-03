@@ -51,7 +51,7 @@ group :development, :test do
   # gem 'rb-inotify' if RUBY_PLATFORM =~ /linux/i
   # gem 'libnotify' if RUBY_PLATFORM =~ /linux/i
   gem 'minitest-spec-rails'
-  # gem 'activerecord-nulldb-adapter', :git => "git://github.com/nulldb/nulldb.git"  
+  gem 'activerecord-nulldb-adapter', :git => "git://github.com/nulldb/nulldb.git"  
   gem "database_cleaner", "~> 1.1.1"
 end
 
