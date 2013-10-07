@@ -1,4 +1,6 @@
 Represent::Application.routes.draw do
+  resources :example_scaffolds
+
   get "about/index"
   get "community/index"
   get "services/index"

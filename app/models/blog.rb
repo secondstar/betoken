@@ -1,9 +1,11 @@
+
+
 class Blog
   attr_reader :entries
   attr_writer :post_maker
   # attr_accessible :post_maker, :entries
   
-  def initialize(entry_fetcher=Post.method(:all))
+  def initialize(entry_fetcher=Post.public_method(:most_recent))
     @entry_fetcher = entry_fetcher
   end
 
@@ -16,7 +18,7 @@ class Blog
   end
 
   def entries
-    fetch_entries.sort_by{|e| e.pubdate}.reverse.take(10)
+    fetch_entries
   end
 
   def new_post(*args)

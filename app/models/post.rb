@@ -1,12 +1,14 @@
-require 'date'
-require 'active_record'
-
 class Post < ActiveRecord::Base
-  validates :title, :presence => true
+  # validates :title, presence: true
+
   # attr_accessible :title, :body, :image_url, :pubdate
 
   attr_accessor :blog
 
+  def self.most_recent(limit=10)
+    order("pubdate DESC").limit(limit)
+  end
+  
   def picture?
     image_url.present?
   end
