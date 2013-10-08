@@ -30,3 +30,13 @@ rerun.txt
 pickle-email-*.html
 .project
 config/initializers/secret_token.rb
+
+# example_scaffold for instruction
+app/assets/stylesheets/example_scaffold*
+app/assets/stylesheets/scaffolds.css.scss
+app/controllers/example_scaffolds_controller.rb
+app/helpers/example_scaffolds_helper.rb
+app/models/example_scaffold.rb
+app/views/example_scaffolds/
+db/migrate/20131007160801_create_example_scaffolds.rb
+app/assets/javascripts/*scaffold*
