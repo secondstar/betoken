@@ -1,20 +1,18 @@
-require_relative '../spec_helper_full'
+require 'activerecord-nulldb-adapter'
+require_relative '../spec_helper_lite'
 require_relative '../../app/models/post'
 
-class PostTest < ActiveSupport::TestCase
-end
-
 describe Post do
-  # include SpecHelpers
+  include SpecHelpers
   before do
-    # setup_nulldb
+    setup_nulldb
     @it = Post.new(:title => "TITLE")
     @ar = @it
     @ar_class = Post
   end
 
   after do
-    # teardown_nulldb
+    teardown_nulldb
   end
 
   it "should support reading and writing a blog reference" do
@@ -39,20 +37,20 @@ describe Post do
       assert(@it.publish)
     end
 
-    # describe "given an invalid post" do
-    #   before do
-    #     stub(@ar).valid?{false}
-    #   end
-    # 
-    #   it "should not add the post to the blog" do
-    #     dont_allow(@blog).add_entry
-    #     @it.publish
-    #   end
-    # 
-    #   it "should return false" do
-    #     refute(@it.publish)
-    #   end
-    # end
+    describe "given an invalid post" do
+      before do
+        stub(@ar).valid?{false}
+      end
+
+      it "should not add the post to the blog" do
+        dont_allow(@blog).add_entry
+        @it.publish
+      end
+
+      it "should return false" do
+        refute(@it.publish)
+      end
+    end
   end
 
   describe "#pubdate" do

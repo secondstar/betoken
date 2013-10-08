@@ -11,15 +11,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131003015241) do
+ActiveRecord::Schema.define(version: 20131007170757) do
+
+  create_table "example_scaffolds", force: true do |t|
+    t.string   "title"
+    t.datetime "dateline"
+    t.text     "body"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "posts", force: true do |t|
     t.string   "title"
     t.text     "body"
     t.text     "image_url"
-    t.datetime "pubdate"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.datetime "pubdate",    default: '1955-07-17 16:43:00'
   end
 
   create_table "projects", force: true do |t|
