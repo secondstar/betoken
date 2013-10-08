@@ -5,16 +5,16 @@ h2.tagline {
     font-style: italic;
 }
 
-.banner {
+.flash {
     text-align: center;
     color: white;
 }
-.banner .notice {
+.flash .notice {
     border-radius: 5px;
     background-color: #90ee90;
     border: solid 2px #bfeebf;
 }
-.banner .error {
+.flash .error {
     border-radius: 5px;
     background-color: #ff6347;
     border: solid 2px #ffbbaf;

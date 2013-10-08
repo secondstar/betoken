@@ -1,7 +1,15 @@
 
-          <div id="flash">
+          <div id="flash"><p id="notice"><%= notice %></p>
+		
 </div>
-          
+  <div class="flash">
+  <% if flash[:alert] %>
+    <p class="error"><%= flash[:alert] %></p>
+  <% end %>
+  <% if flash[:notice] %>
+    <p class="notice"><%= flash[:notice] %></p>
+  <% end %>
+</div>        
 
 
 <div class="main about-header masthead clearfix">
@@ -73,28 +81,28 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor 
 		<ul class="open-pos">
 <li class="clearfix">
   	
-				<img class="icn-services alignleft ror_development" src="intridea_com_about_files/icon_ror_development_2x.png"><div class="clearfix">
+				<img class="icn-services alignleft ror_development" src="/assets/icon_ror_development_2x.png"><div class="clearfix">
   					<a href="http://intridea.theresumator.com/apply/vqtgzY/Ruby-On-Rails-Developer.htmlhttp://intridea.theresumator.com/apply/Ssec8n/User-Interface-Designers.htmlhttp://intridea.theresumator.com/apply/zfkELH/User-Interface-Developer.htmlhttp://intridea.theresumator.com/apply/r54Aq0/Operations-Manager.html">Ruby on Rails Developer</a>
   					<span><strong>Location:</strong> Washington, DC, (Multiple states)</span>
   				</div>
   			</li>
   		  <li class="clearfix">
   	
-				<img class="icn-services alignleft ui_design" src="intridea_com_about_files/icon_user_interface_design_2x.png"><div class="clearfix">
+				<img class="icn-services alignleft ui_design" src="/assets/icon_user_interface_design_2x.png"><div class="clearfix">
   					<a href="http://intridea.theresumator.com/apply/vqtgzY/Ruby-On-Rails-Developer.htmlhttp://intridea.theresumator.com/apply/Ssec8n/User-Interface-Designers.htmlhttp://intridea.theresumator.com/apply/zfkELH/User-Interface-Developer.htmlhttp://intridea.theresumator.com/apply/r54Aq0/Operations-Manager.html">User Interface Designers</a>
   					<span><strong>Location:</strong> Washington, DC, (Multiple states)</span>
   				</div>
   			</li>
   		  <li class="clearfix">
   	
-				<img class="icn-services alignleft ui_design" src="intridea_com_about_files/icon_user_interface_design_2x.png"><div class="clearfix">
+				<img class="icn-services alignleft ui_design" src="/assets/icon_user_interface_design_2x.png"><div class="clearfix">
   					<a href="http://intridea.theresumator.com/apply/vqtgzY/Ruby-On-Rails-Developer.htmlhttp://intridea.theresumator.com/apply/Ssec8n/User-Interface-Designers.htmlhttp://intridea.theresumator.com/apply/zfkELH/User-Interface-Developer.htmlhttp://intridea.theresumator.com/apply/r54Aq0/Operations-Manager.html">User Interface Developer</a>
   					<span><strong>Location:</strong> Washington, DC, (Multiple states)</span>
   				</div>
   			</li>
   		  <li class="clearfix">
   	
-				<img class="icn-services alignleft ui_design" src="intridea_com_about_files/icon_user_interface_design_2x.png"><div class="clearfix">
+				<img class="icn-services alignleft ui_design" src="/assets/icon_user_interface_design_2x.png"><div class="clearfix">
   					<a href="http://intridea.theresumator.com/apply/vqtgzY/Ruby-On-Rails-Developer.htmlhttp://intridea.theresumator.com/apply/Ssec8n/User-Interface-Designers.htmlhttp://intridea.theresumator.com/apply/zfkELH/User-Interface-Developer.htmlhttp://intridea.theresumator.com/apply/r54Aq0/Operations-Manager.html">Operations Manager</a>
   					<span><strong>Location:</strong> Washington, DC, (Multiple states)</span>
   				</div>
