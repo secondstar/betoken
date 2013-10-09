@@ -91,70 +91,9 @@
 
 <!-- / #feature_box -->
 
-<!-- phone contact us -->
-<div class="main contact-phone visible-phone clearfix">
-	<ul>
-		<li>Phone: <a href="tel:18889684332">1-888-968-IDEA</a></li>
-		<li>Email: <a href="mailto:info@intridea.com">info@intridea.com</a></li>
-		<li>Twitter: <a href="http://www.twitter.com/intridea">@Intridea</a></li>
-	</ul>
-	
-	<ul class="social cf">
-        <li>
-          <a class="facebook" href="http://facebook.com/intridea" title="Intridea on Facebook" target="_blank">Facebook</a> </li>
-        <li>
-          <a class="twitter" href="http://twitter.com/intridea" title="Intridea on Twitter" target="_blank">Twitter</a>
-        </li>
-        <li>
-          <a class="linkedin" href="http://www.linkedin.com/company/intridea-inc" title="Intridea on Linkedin" target="_blank">Linkedin</a>
-        </li>
-        <li>
-          <a class="email" href="/about/newsletter" title="Join the Intridea Newsletter">Newsletter</a>
-        </li>
-      </ul>
-</div>
+<%= render :partial => 'phone_contact_us' %>
 
-<!-- phone service -->
-<section id="service-home" class="visible-phone clearfix">
-	<h2 class="section-title"><strong>Services</strong> Software Design, Development &amp; Strategy</h2>
-	<div class="sidebar clearfix">
-		<ul>
-			<li>
-        <a href="/services/development">
-			<%= image_tag "icon_user_interface_design.png", :title => "Icon_user_interface_design", :class => "icn-services" %>
-			
-		</a>
-				<p class="longer"><a href="/services/design">User Interface Design</a></p>
-			</li>
-			<li>
-        <a href="/services/development">
-				<%= image_tag "icon_ror_development.png", :title => "Icon_ror_development", :class => "icn-services" %>
-		</a>
-				<p><a href="/services/development">Ruby on Rails Development</a></p>
-			</li>
-			<li>
-        <a href="/services/mobile">
-				<%= image_tag "icon_mobile_app_development.png", :title => "Icon_mobile_app_development", :class => "icn-services" %>
-			</a>
-				<p><a href="/services/mobile">Mobile App Development</a></p>
-			</li>
-			<li>
-        <a href="/services/training">
-			<%= image_tag "icon_ror_training.png", :title => "Icon_ror_training", :class => "icn-services" %>
-		</a>
-				<p><a href="/services/training">Ruby on Rails Training</a></p>
-			</li>
-		</ul>
-		<h3>We build custom web and mobile applications</h3>
-		<div id="content">
-			<p class="hidden-phone">To compete in this disruptive business world 
-you need a serious edge. Great applications give you that edge. At 
-Intridea, we work with companies around the world to create custom 
-software solutions that are both beautiful <em>and</em> robust, giving companies the edge they need to thrive in any industry. </p>
-			<a href="/services" class="btn blue small visible-desktop">Learn More</a>
-		</div>			
-	</div>
-</section>
+<%= render :partial => '/shared/phone_service' %>
 	
 <%= render :partial => '/shared/blog_3_items' %>
 
