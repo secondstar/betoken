@@ -130,13 +130,29 @@
 			<a id="hidden_about" href="/about"></a>				
 		</div>		 -->
 												
-    <select class="chzn_select iphone_nav" id="main_nav_url" name="main_nav_url" style="width:150px; display:none;"><option value="/">Home</option>
-<option value="/contact">Contact Us</option>
-<option value="/services" selected="selected">Services</option>
-<option value="/portfolio">Portfolio</option>
-<option value="/blog">Blog</option>
-<option value="/community">Community</option>
-<option value="/about">About</option></select>
+    <select class="chzn_select iphone_nav" id="main_nav_url" name="main_nav_url" style="width:150px; display:none;">
+		<%= content_tag :option, :value => "/", :selected => ('selected' if current_page?('/')) do %>
+      		Home
+		<% end %>
+		<%= content_tag :option, :value => "/contact", :selected => ('selected' if current_page?('/contact')) do %>
+      		Contact Us
+		<% end %>
+		<%= content_tag :option, :value => "/services", :selected => ('selected' if current_page?('/services')) do %>
+      		Services
+		<% end %>
+		<%= content_tag :option, :value => "/portfolio", :selected => ('selected' if current_page?('/portfolio')) do %>
+      		Portfolio
+		<% end %>
+		<%= content_tag :option, :value => "/blog", :selected => ('selected' if current_page?('/blog')) do %>
+      		Blog
+		<% end %>
+		<%= content_tag :option, :value => "/community", :selected => ('selected' if current_page?('/community')) do %>
+      		Community
+		<% end %>
+		<%= content_tag :option, :value => "/about", :selected => ('selected' if current_page?('/about')) do %>
+      		About
+		<% end %>
+	</select>
 	</div>		
 
 </div>
