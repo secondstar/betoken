@@ -7,34 +7,9 @@
           
 <div class="content main sidebar clearfix masthead" data-masthead-image="">
 
-    <div id="sub_nav">
-  <ul class="visible-desktop nav clearfix">
-<li class="active"><a href="http://www.intridea.com/services">Services</a></li>
-    <li class=""><a href="http://www.intridea.com/services/expertise">Expertise</a></li>
-    <li class=""><a href="http://www.intridea.com/services/design">Design</a></li>
-    <li class=""><a href="http://www.intridea.com/services/development">Development</a></li>
-    <li class=""><a href="http://www.intridea.com/services/mobile">Mobile</a></li>
-    <li class=""><a href="http://www.intridea.com/services/training">Training</a></li>
-    <li class=""><a href="http://www.intridea.com/services/process">Process</a></li>
-  </ul>
-<div class="visible-tablet styled-select">
-  	<select class="chzn_select tablet_subnav chzn-done" id="services_sub_nav_url" name="services_sub_nav_url" style="width: 160px; display: none;"><option value="/services" selected="selected">Services</option>
-<option value="/services/expertise">Expertise</option>
-<option value="/services/design">Design</option>
-<option value="/services/development">Development</option>
-<option value="/services/mobile">Mobile</option>
-<option value="/services/training">Training</option>
-<option value="/services/process">Process</option></select><div style="width: 160px;" class="chzn-container chzn-container-single" id="services_sub_nav_url_chzn"><a href="javascript:void(0)" class="chzn-single"><span>Services</span><div><b></b></div></a><div class="chzn-drop" style="left: -9000px; width: 160px; top: 0px;"><div style="" class="chzn-search"><input style="width: 125px;" autocomplete="off" type="text"></div><ul class="chzn-results"><li id="services_sub_nav_url_chzn_o_0" class="active-result result-selected" style="">Services</li><li id="services_sub_nav_url_chzn_o_1" class="active-result" style="">Expertise</li><li id="services_sub_nav_url_chzn_o_2" class="active-result" style="">Design</li><li id="services_sub_nav_url_chzn_o_3" class="active-result" style="">Development</li><li id="services_sub_nav_url_chzn_o_4" class="active-result" style="">Mobile</li><li id="services_sub_nav_url_chzn_o_5" class="active-result" style="">Training</li><li id="services_sub_nav_url_chzn_o_6" class="active-result" style="">Process</li></ul></div></div>
-</div>
-</div>
+    <%= render :partial => 'sub_nav' %>
 
-    <div class="header-description clearfix">
-      <h2>We Help Giants Disrupt</h2>
-      <p>To compete in this disruptive business world you need a serious
- edge. Great applications give you that edge. At Intridea, we partner 
-with you to build industry-changing products that are both beautiful and
- robust, giving you the edge you need to thrive in your industry. </p>
-    </div>
+    <%= render :partial => 'header_description' %>
 
 </div> <!-- / #feature_box -->
 
@@ -112,44 +87,10 @@ re-imagine their presence on the web and mobile. </p>
 			</div>
 		</div>
 	</div>
-	<!-- phone service -->
-	<section id="service-home" class="visible-phone clearfix"><h2 class="section-title">
-		<strong>Services</strong> Beautiful Software Solutions</h2>
-		<div class="sidebar clearfix">
-			<ul>
-				<li class="design">
-					<a href="http://www.intridea.com/services/design">
-						<img alt="Icon_user_interface_design_2x" class="icn-services"
-						 src="/assets/icon_user_interface_design_2x.png">
-					</a>
-						<p class="longer">User Interface Design</p>
-				</li>
-				<li class="rails">
-				<a href="http://www.intridea.com/services/development"><img alt="Icon_ror_development_2x" class="icn-services" src="/assets/icon_ror_development_2x.png"></a>
-				<p>Ruby on Rails Development</p>
-			</li>
-			<li class="mobile">
-				<a href="http://www.intridea.com/services/mobile"><img alt="Icon_mobile_app_development_2x" class="icn-services" src="/assets/icon_mobile_app_development_2x.png"></a>
-				<p>Mobile App Development</p>
-			</li>
-			<li class="training">
-	  			<a href="http://www.intridea.com/training"><img alt="Icon_ror_training_2x" class="icn-services" src="/assets/icon_ror_training_2x-645d5250553b5b574b1fcd185ec77734.png"></a>
-				<p>Ruby on Rails Training</p>
-			</li>
-		</ul>
-<h3>We build custom web and mobile applications</h3>
-		<div id="content">
-			<p class="hidden-phone">To compete in this disruptive business world 
-you need a serious edge. Great applications give you that edge. At 
-Intridea, we work with companies around the world to create custom 
-software solutions that are both beautiful <em>and</em> robust, giving companies the edge they need to thrive in any industry. </p>
-			<a href="http://www.intridea.com/services" class="btn blue small visible-desktop">Learn More</a>
-		</div>			
-	</div>
-</section>
+	<%= render :partial => "/shared/phone_service" %>
 </div>
 <%= render :partial => '/shared/portfolio_bar' %>
 
-<%= render :partial => '/shared/client_section' %>
+<%# render :partial => '/shared/client_section' %>
 
 
