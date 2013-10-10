@@ -4,7 +4,7 @@ require 'rr'
 require 'ostruct'
 require 'active_support'
 require 'active_support/deprecation'
-# require 'activerecord-nulldb-adapter'
+require 'activerecord-nulldb-adapter'
  
 class MiniTest::Unit::TestCase
   include RR::Adapters::MiniTest

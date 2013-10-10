@@ -1,2 +1,43 @@
-<h1>Community#index</h1>
-<p>Find me in app/views/community/index.html.erb</p>
+<% content_for :masthead_container do -%>
+  community_container
+<% end -%>
+
+<div id="flash">
+</div>
+          
+<div class="main sidebar clearfix masthead" data-masthead-image="">
+	<%= render :partial => 'sub_nav' %>
+	<%= render :partial => 'header_description' %>
+</div>
+
+<div class="clearfix">
+	<div class="community-wrap clearfix">
+		
+		<%= render :partial => 'events_2items' %>
+		
+		<%= render :partial => 'open_source' %>
+		
+		<%= render :partial => 'sponsored_projects' %>
+		
+	</div>
+	<div class="community-side visible-desktop">
+		<div class="sidebar clearfix">
+			<%# render :partial => 'presentation_slides' %>
+			
+			<%# render :partial => 'open_source_projects_side' %>
+
+			<%= render :partial => 'popular_blog_posts' %>
+			<%= render :partial => 'past_events' %>
+			
+			<a href="" class="hiring">We're Hiring</a>
+		</div>
+		<div class="main new-gig clearfix">
+			<h3>Looking for a new gig?</h3>
+			<p>Obsessed with good code and beautiful design? Do you value form as
+ much as function? We do too. And we're looking for people like you.</p>
+			<a href="/careers" class="btn green block large">View Open Positions</a>
+		</div>
+	</div>	
+
+</div>
+<%= render :partial => "/shared/blog_3_items" %>

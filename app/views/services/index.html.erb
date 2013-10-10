@@ -1,2 +1,96 @@
-<h1>Services#index</h1>
-<p>Find me in app/views/services/index.html.erb</p>
+<% content_for :masthead_container do -%>
+  services_container
+<% end -%>
+
+          <div id="flash">
+</div>
+          
+<div class="content main sidebar clearfix masthead" data-masthead-image="">
+
+    <%= render :partial => 'sub_nav' %>
+
+    <%= render :partial => 'header_description' %>
+
+</div> <!-- / #feature_box -->
+
+<h2 class="section-title">
+<strong>Expertise</strong> Understanding Your Business Needs</h2>
+<div class="main even clearfix">	
+	<div class="image-content alignleft">
+		<h3>You've got a business to run. We make software that helps. </h3>
+		<p>At Intridea we're more than just exceptional software developers 
+and designers; we're a task force of solutionaries working with 
+companies large and small to transform anachronistic industries with 
+engaging, targeted, and innovative software solutions.</p>
+		<p>From napkin to webscale and everything in between - whether you 
+already have a solid idea or need help defining your vision and strategy
+ we can help. Our expertise in bleeding-edge technology keeps us 
+formidably agile, enabling us to help fledgling startups build from the 
+ground as effectively as we can help enterprise giants entirely 
+re-imagine their presence on the web and mobile. </p>
+	</div>
+	
+	<div class="image-wrapper alignright">
+   		<img alt="Bigdata_ipad_2x" src="/assets/bigdata_ipad_2x.png">
+</div>
+</div>
+
+<div id="service">
+	<div class="hidden-phone">
+		<h2 class="section-title">
+			<strong>Services</strong> Beautiful Software Solutions
+		</h2>
+		<div class="main sidebar full service-tablet clearfix">
+			<div class="portfolio_item"> 
+  				<h3><a href="http://www.intridea.com/services/design">Web &amp; Mobile Design</a></h3>
+				<h4 class="visible-desktop">Research, Analysis and Usable Design</h4>
+				<div class="tablet-icn">
+					<a href="http://www.intridea.com/services/design"><img alt="Icon_user_interface_design_2x"
+						 class="icn-services" src="/assets/icon_user_interface_design_2x.png"></a>
+				</div>
+				<p class="service-desc">Your customers interact with 
+				hundreds of brands every day. 
+				Yet, only a few of these 
+				interactions are memorable. This is why the experience they share with 
+				your brand is so important. An average user experience will yield 
+				average results. Give them a 
+				memorable one, though, and you’ll have a customer for life. </p>
+			</div>
+	
+			<div class="portfolio_item">
+				<h3><a href="http://www.intridea.com/services/development">Web Development</a></h3>
+				<h4 class="visible-desktop">Rails, Backbone.js, Node.js</h4>
+				<div class="tablet-icn">
+					<a href="http://www.intridea.com/services/development"><img alt="Icon_ror_development_2x"
+						 class="icn-services" src="/assets/icon_ror_development_2x.png"></a>
+				</div>
+				<p class="service-desc">Exceptional development on the web is done 
+					with cutting-edge technologies like Ruby on Rails, 
+							  Backbone.js, Node.js, Python, Hadoop and other modern frameworks. At
+					 Intridea, we're polyglots - we stand at the frontier of web design and 
+					development, leveraging the benefits of these frameworks for rapid 
+					application development. </p>
+			</div>
+	
+			<div class="portfolio_item omega clearfix">
+				<h3><a href="http://www.intridea.com/services/mobile">Mobile Development</a></h3>
+				<h4 class="visible-desktop">iOS - iPhone &amp; iPad, Android</h4>
+				<div class="tablet-icn mobile">
+					<a href="http://www.intridea.com/services/mobile"><img alt="Icon_mobile_app_development_2x"
+						 class="icn-services" src="/assets/icon_mobile_app_development_2x.png"></a>
+				</div>
+				<p class="service-desc">Smart companies realize the value in being 
+					where their customers are. Today, that place is the mobile web. As your 
+					customer's expectations grow, your absence becomes even more likely to 
+					be filled by your competitors. We'll help you reach your customers with 
+					elegant and intuitive mobile applications.</p>
+			</div>
+		</div>
+	</div>
+	<%= render :partial => "/shared/phone_service" %>
+</div>
+<%= render :partial => '/shared/portfolio_bar' %>
+
+<%# render :partial => '/shared/client_section' %>
+
+
