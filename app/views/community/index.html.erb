@@ -2,31 +2,12 @@
   community_container
 <% end -%>
 
-          <div id="flash">
+<div id="flash">
 </div>
           
 <div class="main sidebar clearfix masthead" data-masthead-image="">
-	<div id="sub_nav">
-  <ul class="visible-desktop nav clearfix">
-<li class="active"><a href="/community">Intridea Community</a></li>
-    <li class=""><a href="/community/events">Events</a></li>
-    <li class=""><a href="/community/opensource">OSS Projects</a></li>
-  </ul>
-<div class="visible-tablet styled-select">
-    <select class="chzn_select tablet_subnav chzn-done" id="community_sub_nav_url" name="community_sub_nav_url" style="width: 160px; display: none;"><option value="/community" selected="selected">Intridea Community</option>
-<option value="/community/events">Events</option>
-<option value="/community/opensource">OSS Projects</option></select><div style="width: 160px;" class="chzn-container chzn-container-single" id="community_sub_nav_url_chzn"><a href="javascript:void(0)" class="chzn-single"><span>Intridea Community</span><div><b></b></div></a><div class="chzn-drop" style="left: -9000px; width: 160px; top: 0px;"><div style="" class="chzn-search"><input style="width: 125px;" autocomplete="off" type="text"></div><ul class="chzn-results"><li id="community_sub_nav_url_chzn_o_0" class="active-result result-selected" style="">Intridea Community</li><li id="community_sub_nav_url_chzn_o_1" class="active-result" style="">Events</li><li id="community_sub_nav_url_chzn_o_2" class="active-result" style="">OSS Projects</li></ul></div></div>
-</div>
-</div>
-	<div class="header-description clearfix">
-		<h2>The Technological Zeitgeist</h2>
-		<p>Our love of beautiful code and aesthetic design doesn't end with 
-our workday; our obsession with technology means that we are often the 
-earliest experts in emerging frameworks. We spend our after-hours 
-learning new technologies, sharing our expertise at conferences, 
-training fledgling developers and designers, creating and supporting 
-open source software and writing on our blog.</p>
-	</div>
+	<%= render :partial => 'sub_nav' %>
+	<%= render :partial => 'header_description' %>
 </div>
 
 <div class="clearfix">
@@ -39,14 +20,14 @@ open source software and writing on our blog.</p>
 		<%= render :partial => 'sponsored_projects' %>
 		
 	</div>
-		<div class="community-side visible-desktop">
+	<div class="community-side visible-desktop">
 		<div class="sidebar clearfix">
 			<%# render :partial => 'presentation_slides' %>
 			
 			<%# render :partial => 'open_source_projects_side' %>
 
-	<%= render :partial => 'popular_blog_posts' %>
-	<%= render :partial => 'past_events' %>
+			<%= render :partial => 'popular_blog_posts' %>
+			<%= render :partial => 'past_events' %>
 			
 			<a href="" class="hiring">We're Hiring</a>
 		</div>
