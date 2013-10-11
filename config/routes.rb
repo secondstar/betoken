@@ -4,7 +4,13 @@ Represent::Application.routes.draw do
 
   get "about/index"
   get "community/index"
-  get "services/index"
+  get "services/expertise"
+  get "services/design"
+  get "services/development"
+  get "services/mobile"
+  get "services/training"
+  get "services/mobile"
+  get "services/how_we_work"
   get "portfolio/index"
   resources :projects
 
