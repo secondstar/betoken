@@ -1,20 +1,24 @@
-<div class="main post_summary">
+<%= content_tag :div, :class => ('post_featured' if entry.id == @blog.entries[0].id) do %>
+
+
+	<div class="main post_summary">
   
-  <h2 class="blog_title"><%= link_to entry.title, post_path(entry) %></h2>
+	  <h2 class="blog_title"><%= link_to entry.title, post_path(entry) %></h2>
   
- 	<div class="meta cf">
-		<span class="author">By <a href="/about/team/robert-dempsey">Robert Dempsey</a></span>  | 
-		<span class="date"><%= entry.pubdate %></span>
-		<!-- <span class="tags"><a href="/blog/tag/conferences">conferences</a></span> -->
+	 	<div class="meta cf">
+			<span class="author">By <a href="/about/team/robert-dempsey">Robert Dempsey</a></span>  | 
+			<span class="date"><%= entry.pubdate %></span>
+			<!-- <span class="tags"><a href="/blog/tag/conferences">conferences</a></span> -->
+		</div>
+
+	  <article class="body clearfix"><div class="blog-img">
+	        <a href="/blog/2013/8/20/see-you-in-madison"><%= image_tag entry.image_url, :title => "medium" %></a>
+	      </div>
+
+	    <div class="blog-content">
+			<%= entry.body %>
+			<%= link_to "Read more…", post_path(entry), :class => "more_link btn blue" %>
+	    </div>
+	  </article><div style="clear: both"></div>
 	</div>
-
-  <article class="body clearfix"><div class="blog-img">
-        <a href="/blog/2013/8/20/see-you-in-madison"><%= image_tag entry.image_url, :title => "medium" %></a>
-      </div>
-
-    <div class="blog-content">
-		<%= entry.body %>
-		<%= link_to "Read more…", post_path(entry), :class => "more_link btn blue" %>
-    </div>
-  </article><div style="clear: both"></div>
-</div>
+<% end %>
