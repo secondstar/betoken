@@ -17,8 +17,7 @@ class PostsController < ApplicationController
   def create
     @post = @blog.new_post(params.require(:post).permit(:title, :body, :image_url))
     if @post.publish
-      redirect_to root_url,
-            tadah: "Post successfully created"
+      redirect_to post_url(@post), error: "Pay attention to the road"
     else
       flash.now[:error] = "Whoops, the highlighted fields need better input."
       render action: "new"
