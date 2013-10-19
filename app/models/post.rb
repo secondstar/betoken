@@ -13,7 +13,7 @@ validates :title, presence: true
   
 
   def self.most_recent(limit=10)
-    order("pubdate DESC").limit(limit)
+    order(pubdate: :desc).limit(limit)
   end
   
   def picture?
