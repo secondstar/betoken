@@ -1,3 +1,8 @@
+require "active_model"
+
+
+require 'active_support'
+require 'active_support/deprecation'
 require 'activerecord-nulldb-adapter'
 require_relative '../spec_helper_lite'
 require_relative '../../app/models/post'

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131008022655) do
+ActiveRecord::Schema.define(version: 20131013043029) do
 
   create_table "active_admin_comments", force: true do |t|
     t.integer  "resource_id",   null: false
@@ -141,6 +141,7 @@ ActiveRecord::Schema.define(version: 20131008022655) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.datetime "pubdate",    default: '1955-07-17 16:43:00'
+    t.string   "tags"
   end
 
   create_table "projects", force: true do |t|
