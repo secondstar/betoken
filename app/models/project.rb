@@ -6,7 +6,7 @@ class Project < ActiveRecord::Base
   attr_accessor :portfolio
 
   def self.most_recent(limit=21)
-    order("pubdate DESC").limit(limit)
+    order(pubdate: :desc).limit(limit)
   end
   
   def picture?
