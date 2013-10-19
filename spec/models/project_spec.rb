@@ -37,20 +37,20 @@ describe Project do
       assert(@it.publish)
     end
 
-    describe "given an invalid project" do
-      before do
-        stub(@ar).valid?{false}
-      end
+#    describe "given an invalid project" do
+#      before do
+#        stub(@ar).valid?{false}
+#      end#
 
-      it "should not add the project to the portfolio" do
-        dont_allow(@portfolio).add_undertaking
-        @it.publish
-      end
+#      it "should not add the project to the portfolio" do
+#        dont_allow(@portfolio).add_undertaking
+#        @it.publish
+#      end
 
-      it "should return false" do
-        refute(@it.publish)
-      end
-    end
+#      it "should return false" do
+#        refute(@it.publish)
+#      end
+#    end
   end
 
   describe "#pubdate" do
