@@ -1,0 +1,17 @@
+<h2 class="section-title"><strong>Built By Intridea</strong> We Make Remarkable Products</h2>										
+<div id="portfolio_bar" class="main clearfix">
+	<% @undertakings.each do |undertaking| %>
+		<% if undertaking.id == @undertakings[0].id %>
+			<div class="portfolio_item alpha ">
+			
+		<% elsif undertaking.id == @undertakings[2].id %>
+			<div class="portfolio_item omega ">
+		<% else %>
+		  	<div class="portfolio_item ">
+	   	<% end %>
+				<%= render :partial => '/welcome/undertaking_summary', :object => undertaking %>
+  			</div>
+	<% end %>
+</div>
+
+
