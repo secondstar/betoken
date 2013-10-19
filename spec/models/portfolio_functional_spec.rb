@@ -27,13 +27,13 @@ describe Portfolio do
       @it.undertakings.must_equal([newest, middle, oldest])
     end
 
-    it "should be limited to 10 items" do
-      10.times do |i|
+    it "should be limited to 21 items" do
+      21.times do |i|
         @it.add_undertaking(make_undertaking_with_date("2011-09-#{i+1}"))
       end
       oldest = make_undertaking_with_date("2011-08-30")
       @it.add_undertaking(oldest)
-      @it.undertakings.size.must_equal(10)
+      @it.undertakings.size.must_equal(21)
       @it.undertakings.wont_include(oldest)
     end
   end

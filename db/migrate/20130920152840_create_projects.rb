@@ -11,6 +11,8 @@ class CreateProjects < ActiveRecord::Migration
       t.string :quotable_person
       t.string :quotable_positon_and_company
       t.string :one_line_project_description
+      t.datetime :pubdate, :default  => nil
+      
 
       t.timestamps
     end

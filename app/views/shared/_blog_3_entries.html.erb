@@ -1,0 +1,18 @@
+<!-- blog post -->
+
+
+<h2 class="section-title"><strong>Blog</strong> Technology, Design, Business</h2>										
+<div id="portfolio_bar" class="main clearfix">
+	<% @posts.each do |post| %>
+		<% if post.id == @posts[0].id %>
+			<div class="portfolio_item blog-preview alpha ">
+			
+		<% elsif post.id == @posts[2].id %>
+			<div class="portfolio_item blog-preview omega ">
+		<% else %>
+		  	<div class="portfolio_item blog-preview visible-desktop ">
+	   	<% end %>
+				<%= render :partial => '/welcome/blog_post', :object => post %>
+  			</div>
+	<% end %>
+</div>

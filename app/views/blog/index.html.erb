@@ -6,42 +6,14 @@
   <hgroup class="hidden-phone"><h2>
 <strong><%= @blog.title %>:</strong> <%= @blog.subtitle %></h2>
   </hgroup><hgroup class="visible-phone"><h2>
-<strong>Blog</strong> Yup, we write</h2>
+<strong><%= @blog.title %></strong> <%= @blog.subtitle %></h2>
 		<a href="/contact" class="btn blue">Get in Touch</a>
   </hgroup><div id="posts">
-    	<div class="post_featured">
-    		
-<div class="main post_summary">
-  
-  <h2 class="blog_title"><a href="/blog/2013/9/13/see-you-at-mobileux-camp-dc-tomorrow">See You At MobileUXCamp DC Tomorrow!</a></h2>
-  
- 	<div class="meta cf">
-		<span class="author">By <a href="/about/team/robert-dempsey">Robert Dempsey</a></span>  | 
-		<span class="date">September 13, 2013</span>
-		<span class="tags"><a href="/blog/tag/events">events</a></span>
-	</div>
-
-  <article class="body clearfix">
-	<div class="blog-img">
-        <a href="/blog/2013/9/13/see-you-at-mobileux-camp-dc-tomorrow"><img alt="Medium" class="post_image_large" src="http://s3.amazonaws.com/intridea-responsive/production/posts/images/662/medium.png"></a>
-	</div>
-
-
-    <div class="blog-content">
-      <p>Join Brandon, Kathryn and me tomorrow at the Goethe-Institut / German Cultural Center for MobileUXCamp DC 2013.</p>
-
-	  <a href="/blog/2013/9/13/see-you-at-mobileux-camp-dc-tomorrow" class="more_link btn blue">Read more…</a>
-    </div>
-  </article>
-<div style="clear: both"></div>
-</div>
-
-      </div>
     <div id="post_items">
 		<%= render :partial => "entry", :collection => @blog.entries %>
   	</div>
     
-  	<div class="visible-desktop">
+  	<!-- <div class="visible-desktop">
   	      <div class="paginator">
 			    <a class="on">On</a>
 			    <nav class="pagination"><span class="page current  away-82">
@@ -101,9 +73,9 @@
 			    </nav><a class="off">off</a>
   		</div>
 
-  	</div>
+  	</div> -->
   	  
-		<div class="visible-tablet">
+		<!-- <div class="visible-tablet">
   	      <div class="paginator">
     <a class="on">On</a>
     <nav class="pagination"><span class="page current  away-82">
@@ -152,8 +124,8 @@
   </div>
 
   	</div>
-    	
-  	<div class="visible-phone">
+  -->   	
+  	<!-- <div class="visible-phone">
   	      <div class="paginator">
     <a class="on">On</a>
     <nav class="pagination"><span class="page current  away-82">
@@ -193,7 +165,7 @@
     </nav><a class="off">off</a>
   </div>
 
-  	</div>  
+  	</div>   -->
   	
   </div>    
 	

@@ -38,6 +38,6 @@ class Blog
   end
 
   def post_maker
-    @post_maker ||= Post.method(:new)
+    @post_maker ||= Post.public_method(:new)
   end
 end

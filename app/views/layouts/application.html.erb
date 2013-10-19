@@ -165,7 +165,7 @@
       <div class="wrapper omega <%= yield(:masthead_container) %>">
         <div id="main" role="main">
 		    <div class="banner sixteen columns clearfix">
-				<div id="flash">
+				<div id="flash" class="flash">
 				  <% flash.each do |key, value| %>
 				    <div title="<%= key.to_s.humanize %>" class="<%= key %>">
 				      <p><%= value %></p>

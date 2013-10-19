@@ -30,6 +30,11 @@ gem 'jbuilder', '~> 1.2'
 # Pg is the Ruby interface to the {PostgreSQL RDBMS}[http://www.postgresql.org/].
 gem "pg", "~> 0.17.0"
 
+# Static pages
+gem "high_voltage", "~> 2.0.0"
+
+# Blog tagging and maybe more
+gem "acts-as-taggable-on", "~> 2.4.1"
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false

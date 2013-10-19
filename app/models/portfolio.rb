@@ -35,6 +35,6 @@ class Portfolio
   end
 
   def project_maker
-    @project_maker ||= Project.method(:new)
+    @project_maker ||= Project.public_method(:new)
   end
 end

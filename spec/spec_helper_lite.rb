@@ -2,12 +2,9 @@ ENV['RAILS_ENV'] ||= 'test'
 require 'minitest/autorun'
 require 'rr'
 require 'ostruct'
-require 'active_support'
-require 'active_support/deprecation'
-require 'activerecord-nulldb-adapter'
  
 class MiniTest::Unit::TestCase
-  include RR::Adapters::MiniTest
+  # include RR::Adapters::MiniTest # rr says that we don't need this line anymore
 end
  
 def stub_module(full_name, &block)

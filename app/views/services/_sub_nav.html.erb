@@ -1,12 +1,35 @@
 <div id="sub_nav">
   		<ul class="visible-desktop nav clearfix">
-			<li class="active"><a href="http://www.intridea.com/services">Services</a></li>
-		    <li class=""><a href="http://www.intridea.com/services/expertise">Expertise</a></li>
-		    <li class=""><a href="http://www.intridea.com/services/design">Design</a></li>
-		    <li class=""><a href="http://www.intridea.com/services/development">Development</a></li>
-		    <li class=""><a href="http://www.intridea.com/services/mobile">Mobile</a></li>
-		    <li class=""><a href="http://www.intridea.com/services/training">Training</a></li>
-		    <li class=""><a href="http://www.intridea.com/services/process">Process</a></li>
+			<%= content_tag :li, :class => ('active' if current_page?('/services')) do %>
+	      		<a href="/services">Services</a>
+			<% end %>
+			<%= content_tag :li, :class => ('active' if current_page?('/services/expertise')) do %>
+	      		<a href="/services/expertise">Expertise</a>
+				
+			<% end %>
+			<%= content_tag :li, :class => ('active' if current_page?('/services/design')) do %>
+	      		<a href="/services/design">Design</a>
+			<% end %>
+			<%= content_tag :li, :class => ('active' if current_page?('/services/development')) do %>
+	      		<a href="/services/development">Development</a>
+			<% end %>
+			<%= content_tag :li, :class => ('active' if current_page?('/services/mobile')) do %>
+	      		<a href="/services/mobile">Mobile</a>
+			<% end %>
+			<%= content_tag :li, :class => ('active' if current_page?('/services/training')) do %>
+	      		<a href="/services/training">Training</a>
+			<% end %>
+			<%= content_tag :li, :class => ('active' if current_page?('/services/how_we_work')) do %>
+	      		<a href="/services/how_we_work">Process</a>
+			<% end %>
+	
+			<!-- <li class="active"><a href="/services">Services</a></li>
+		    <li class=""><a href="/services/expertise">Expertise</a></li>
+		    <li class=""><a href="/services/design">Design</a></li>
+		    <li class=""><a href="/services/development">Development</a></li>
+		    <li class=""><a href="/services/mobile">Mobile</a></li>
+		    <li class=""><a href="/services/training">Training</a></li>
+		    <li class=""><a href="/services/how_we_work">Process</a></li> -->
   		</ul>
 		<div class="visible-tablet styled-select">
 		  	<select class="chzn_select tablet_subnav chzn-done" id="services_sub_nav_url" name="services_sub_nav_url" style="width: 160px; display: none;">
@@ -16,7 +39,7 @@
 				<option value="/services/development">Development</option>
 				<option value="/services/mobile">Mobile</option>
 				<option value="/services/training">Training</option>
-				<option value="/services/process">Process</option>
+				<option value="/services/how_we_work">Process</option>
 			</select>
 			<div style="width: 160px;" 
 				class="chzn-container chzn-container-single" 
