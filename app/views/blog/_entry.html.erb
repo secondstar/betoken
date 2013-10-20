@@ -16,7 +16,7 @@
 	      </div>
 
 	    <div class="blog-content">
-			<%= entry.body %>
+			<%= truncate(entry.body, length: 140)%>
 			<%= link_to "Read more…", post_path(entry), :class => "more_link btn blue" %>
 	    </div>
 	  </article><div style="clear: both"></div>

@@ -11,12 +11,7 @@
 				<%= image_tag "icon_user_interface_design_2x.png", :title => "Icon_user_interface_design_2x", :class => "icn-services" %>
 			</a>
 		</div>
-		<p class="service-desc">Your customers interact with 
-		hundreds of brands every day. 
-		Yet, only a few of these 
-interactions are memorable. This is why the experience they share with 
-your brand is so important. A memorable user experience helps position
-your company, and your brand. </p>
+		<%= render :partial => '/shared/design_service_desc' %>
 	</div>
 	
 	<div class="portfolio_item">
@@ -27,12 +22,7 @@ your company, and your brand. </p>
 				<%= image_tag "icon_ror_development_2x.png", :title => "Icon_ror_development_2x", :class => "icn-services" %>				
 			</a>
 		</div>
-		<p class="service-desc">Exceptional development on the web is done 
-with cutting-edge technologies like Ruby on Rails, 
-		  Backbone.js, Node.js, Python, Hadoop and other modern frameworks. We're 
-		polyglots - we stand at the frontier of web design and 
-development, leveraging the benefits of these frameworks for rapid 
-application development. </p>
+		<%= render :partial => '/shared/web_development_service_desc' %>
 	</div>
 	
 	<div class="portfolio_item omega clearfix">
@@ -43,7 +33,7 @@ application development. </p>
 				<%= image_tag "icon_mobile_app_development_2x.png", :title => "Icon_mobile_app_development_2x", :class => "icn-services" %>				
 			</a>
 		</div>
-		<p class="service-desc">Smart companies know the value in being where their customers are. More and more, that place is the mobile web. We'll help you better reach your current and new customers with elegant and intuitive mobile applications.</p>
+		<%= render :partial => '/shared/mobile_development_service_desc' %>
 	</div>
 </div>
 </div>
