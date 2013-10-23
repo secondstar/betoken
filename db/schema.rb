@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131013043029) do
+ActiveRecord::Schema.define(version: 20131022193533) do
 
   create_table "contacts", force: true do |t|
     t.string   "first_name"
@@ -56,6 +56,7 @@ ActiveRecord::Schema.define(version: 20131013043029) do
     t.string   "slogan"
     t.string   "category"
     t.text     "summary_image_url"
+    t.text     "main_image_url"
   end
 
 end

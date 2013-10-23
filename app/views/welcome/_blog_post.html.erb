@@ -1,10 +1,10 @@
 <div class="item_img">
-  <a href="/blog/2013/9/13/see-you-at-mobileux-camp-dc-tomorrow">
-			<%= image_tag "large_002.png", :title => "Large" %>
-		</a>
+  
+		<%= link_to(image_tag(blog_post.image_url, :title => "Large"), post_path(blog_post)) %>
+
   <a class="author-bubble" href="/about/team/robert-dempsey">Robert Dempsey <span class="arrow"></span></a>
 </div>
 <div class="item_desc">
-  <h4><a href="/blog/2013/9/13/see-you-at-mobileux-camp-dc-tomorrow"><strong><%= blog_post.title %></strong></a></h4>
+  <h4><strong><%= link_to blog_post.title, post_path(blog_post) %></strong></h4>
   <p><%= truncate(blog_post.body, length: 140)%></p>
 </div>

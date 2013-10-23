@@ -1,8 +1,7 @@
 <!-- desktop info column-->
 <div class="span-1 alpha visible-desktop">
 
-	<!-- <img alt="Small" src="http://fpoimg.com/279x62?text=logo+url"> -->
-	<%= image_tag "http://fpoimg.com/279x62?text=logo_url+it", :title => "Small" %>
+	<%= image_tag @project.logo_url, :title => "Small" %>
 	<h3 class="proj-desc"><%= @project.one_line_project_description %></h3>
 	<dl class="proj-meta">
 	  

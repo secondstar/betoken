@@ -2,15 +2,12 @@
 
 	<div class="main_column blog_wrapper">
 	  	
-	  <hgroup><div class="hidden-phone">
-				<h2><a href="/blog"><%= @blog.title %>: <%= @blog.subtitle %></a></h2>
-			</div>
-		</hgroup><hgroup class="visible-phone"><h2><a href="/blog">Back to Blog</a></h2>
+	  	<hgroup class="visible-phone"><h2><a href="/blog">Back to Blog</a></h2>
 				<a href="/contact" class="btn blue">Get in Touch</a>
 		</hgroup><div id="content" class="main cf">
 	<article class="post">
 		
-		<h2 class="blog_title"><a href="/blog/2013/9/13/see-you-at-mobileux-camp-dc-tomorrow"><%= @post.title %></a></h2>
+		<h2 class="blog_title"><%= link_to @post.title, @post_path %></h2>
 	  <p class="meta">
 	  	<span class="author">By <a href="/about/team/robert-dempsey">Robert Dempsey</a></span> 
 	  	<span class="date"><%= @post.pubdate  %></span> in 
@@ -18,9 +15,8 @@
 	  </p>
 
 	  <div class="body">
-	    <%= image_tag "medium.png", :class => "post_image_large" %>
+	    <%= image_tag @post.image_url, :class => "post_image_large" %>
 		<p><%= @post.body  %></p>
-		<%= link_to "Welcome", welcome_index_path %>
 
 
 	  </div>

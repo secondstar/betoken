@@ -70,8 +70,11 @@
 			<%= content_tag :li, :class => ('active' if current_page?('/portfolio')) do %>
 				<a href="/portfolio"><span>Portfolio </span><span class='nav_descript'>Good Ideas. Brought to life.</span></a>
 			<% end %>
-			<%= content_tag :li, :class => ('active' if current_page?('/blog')) do %>
-				<a href="/blog"><span>Blog </span><span class='nav_descript'>Dialogue for Tech Zealots</span></a>
+			<%= content_tag :li, :class => ('active' if(current_page?('/blog'))) do %>
+				<a href="/blog">
+					<span>Blog </span>
+					<span class='nav_descript'>Dialogue for Tech Zealots</span>
+				</a>
 			<% end %>
 			<!-- <%= content_tag :li, :class => ('active' if current_page?('/community')) do %>
 	      		<a href="/community"><span>Community </span><span class='nav_descript'>Technological philanthropy</span></a>
