@@ -15,7 +15,8 @@ class PostsController < ApplicationController
   end
   
   def create
-    @post = @blog.new_post(params.require(:post).permit(:title, :body, :image_url))
+    @post = @blog.new_post(post_params)
+
     if @post.publish
       flash.now[:warning] = "Entry added."
       flash.now[:notice] = "Entry added."
@@ -25,4 +26,10 @@ class PostsController < ApplicationController
       render action: "new"
     end
   end
+  
+  private
+    def post_params
+      params.require(:post).permit(:title, :body, :image)
+    end
+  
 end

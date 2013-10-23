@@ -35,6 +35,10 @@ gem "high_voltage", "~> 2.0.0"
 
 # Blog tagging and maybe more
 gem "acts-as-taggable-on", "~> 2.4.1"
+
+# File and image uploading
+gem "carrierwave", "~> 0.9.0"
+
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
