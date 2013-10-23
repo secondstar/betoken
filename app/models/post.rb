@@ -2,7 +2,9 @@ class Post < ActiveRecord::Base
 include ActiveModel::Validations
 validates :title, presence: true
 
-  # attr_accessible :title, :body, :image_url, :pubdate
+# Carrierwave uploader
+mount_uploader :image, ImageUploader
+
 
   # composed_of :tags, :class_name => 'TagList', mapping: %w(tags, tags),
   #                     :converter => ->(value) { TagList(value) }  

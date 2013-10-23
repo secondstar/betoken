@@ -40,3 +40,6 @@ app/models/example_scaffold.rb
 app/views/example_scaffolds/
 db/migrate/20131007160801_create_example_scaffolds.rb
 app/assets/javascripts/*scaffold*
+
+# uploads created during development
+public/uploads

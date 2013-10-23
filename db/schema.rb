@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131022193533) do
+ActiveRecord::Schema.define(version: 20131023122113) do
 
   create_table "contacts", force: true do |t|
     t.string   "first_name"
@@ -32,7 +32,7 @@ ActiveRecord::Schema.define(version: 20131022193533) do
   create_table "posts", force: true do |t|
     t.string   "title"
     t.text     "body"
-    t.text     "image_url"
+    t.text     "image"
     t.datetime "pubdate"
     t.datetime "created_at"
     t.datetime "updated_at"
