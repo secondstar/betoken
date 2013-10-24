@@ -39,6 +39,9 @@ gem "acts-as-taggable-on", "~> 2.4.1"
 # File and image uploading
 gem "carrierwave", "~> 0.9.0"
 
+# store files on amazon s3
+gem "fog", "~> 1.16.0"
+
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
