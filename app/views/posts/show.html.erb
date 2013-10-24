@@ -15,7 +15,7 @@
 	  </p>
 
 	  <div class="body">
-	    <%= image_tag @post.image_url, :class => "post_image_large" %>
+	    <%= image_tag @post.image_url.to_s, :class => "post_image_large" %>
 		<p><%= @post.body  %></p>
 
 
