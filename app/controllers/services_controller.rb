@@ -1,5 +1,7 @@
 class ServicesController < ApplicationController
   def index
+    @undertakings = Project.most_recent(3)
+    
   end
   
   def expertise

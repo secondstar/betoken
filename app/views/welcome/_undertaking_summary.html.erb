@@ -1,8 +1,12 @@
-<a href="http://www.omniauth.org/">
+<%= link_to undertaking_summary do %>
 			<%= image_tag undertaking_summary.image_url, :title => "Feature" %>		
-		  </a>
+<% end %>
 <div class="item_desc">
-  <h4><a href="http://www.omniauth.org/"><strong><%= undertaking_summary.title %></strong> <em><%= undertaking_summary.slogan %></em></a></h4>
+  <h4>
+		<%= link_to undertaking_summary do %>
+		  	<strong><%= undertaking_summary.title %></strong> <em><%= undertaking_summary.slogan %></em>
+		<% end %>
+  </h4>
   <p><%= truncate(undertaking_summary.body, length: 140)%></p>
 
 </div>
