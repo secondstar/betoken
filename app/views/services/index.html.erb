@@ -18,7 +18,7 @@
 <div class="main even clearfix">	
 	<div class="image-content alignleft">
 		<h3>You've got a business to run. We make software that helps. </h3>
-		<p>At Intridea we're more than just exceptional software developers 
+		<p>At <%= @guest_setting.title %> we're more than just exceptional software developers 
 and designers; we're a task force of solutionaries working with 
 companies large and small to transform anachronistic industries with 
 engaging, targeted, and innovative software solutions.</p>
@@ -42,30 +42,30 @@ re-imagine their presence on the web and mobile. </p>
 		</h2>
 		<div class="main sidebar full service-tablet clearfix">
 			<div class="portfolio_item"> 
-  				<h3><a href="http://www.intridea.com/services/design">Web &amp; Mobile Design</a></h3>
+  				<h3><a href="/services/design">Web &amp; Mobile Design</a></h3>
 				<h4 class="visible-desktop">Research, Analysis and Usable Design</h4>
 				<div class="tablet-icn">
-					<a href="http://www.intridea.com/services/design"><img alt="Icon_user_interface_design_2x"
+					<a href="/services/design"><img alt="Icon_user_interface_design_2x"
 						 class="icn-services" src="/assets/icon_user_interface_design_2x.png"></a>
 				</div>
 				<%= render :partial => '/shared/design_service_desc' %>
 			</div>
 	
 			<div class="portfolio_item">
-				<h3><a href="http://www.intridea.com/services/development">Web Development</a></h3>
+				<h3><a href="/services/development">Web Development</a></h3>
 				<h4 class="visible-desktop">Rails, Backbone.js, Node.js</h4>
 				<div class="tablet-icn">
-					<a href="http://www.intridea.com/services/development"><img alt="Icon_ror_development_2x"
+					<a href="/services/development"><img alt="Icon_ror_development_2x"
 						 class="icn-services" src="/assets/icon_ror_development_2x.png"></a>
 				</div>
 				<%= render :partial => '/shared/web_development_service_desc' %>
 			</div>
 	
 			<div class="portfolio_item omega clearfix">
-				<h3><a href="http://www.intridea.com/services/mobile">Mobile Development</a></h3>
+				<h3><a href="/services/mobile">Mobile Development</a></h3>
 				<h4 class="visible-desktop">iOS - iPhone &amp; iPad, Android</h4>
 				<div class="tablet-icn mobile">
-					<a href="http://www.intridea.com/services/mobile"><img alt="Icon_mobile_app_development_2x"
+					<a href="/services/mobile"><img alt="Icon_mobile_app_development_2x"
 						 class="icn-services" src="/assets/icon_mobile_app_development_2x.png"></a>
 				</div>
 				<%= render :partial => '/shared/mobile_development_service_desc' %>

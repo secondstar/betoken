@@ -3,16 +3,6 @@ class GuestSetting
     "Second Star Labs"
   end
   
-  # = {"name"=>"Second Star Labs", 
-  #   "email"=>"info@secondstarlabs.com", 
-  #   "phone"=>"801-499-4594", 
-  #   "twitter"=>"@secondstarlabs", 
-  #   "street"=>"328 Gateway Dr. #116", 
-  #   "city"=>"Pacifica", 
-  #   "state"=>"CA", 
-  #   "zip"=>"94044", 
-  #   "facebook"=>"", 
-  #   "linkedin"=>""}
    def email
      "info@secondstarlabs.com"
    end
@@ -22,7 +12,7 @@ class GuestSetting
    end
    
    def twitter
-    "@secondstarlabs"
+    "secondstarlabs"
    end
    
    def street
@@ -45,7 +35,19 @@ class GuestSetting
     ""
    end
    
-   def linkdin
+   def linkedin
     ""
+   end
+   
+   def feedburner_id
+    "secondstarlabs"
+   end
+   
+   def github_id
+    secondstar
+   end
+   
+   def url
+    "secondstarlabs.com"
    end
 end
