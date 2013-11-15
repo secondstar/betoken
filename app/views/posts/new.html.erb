@@ -1,26 +1,2 @@
 <h1>New Post</h1>
-<%= form_for @post, html: { multipart: true } do |f| %>
-
-  <%# f.error_messages %>
-  <% if @post.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
-
-      <ul>
-      <% @post.errors.full_messages.each do |msg| %>
-        <li><span><%= msg %></span></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-  <%= f.text_field :title %>
-  <%= f.text_area :body %>
-  <%# label :tags, "Tags:" %>
-  <%# f.text_field :tags %>
-  <%=label :image, "Upload Picture:" %>
-  <%= f.file_field :image %><br />
-
-  <%=label :remote_image_image_url, "or Remote Picture URL:" %>
-  <%= f.text_field :remote_image_url %><br />
-  <%= f.submit %>
-<% end %>
+<%= render  'form' %>

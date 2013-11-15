@@ -10,7 +10,8 @@
 <%# end %>
 <!-- one_line_project_description -->
 <h1>New project</h1>
-<%= form_for @project do |f| %>
+
+<!-- <%= form_for @project do |f| %>
   <%# f.error_messages %>
 
 <%= label :title, "Title" %>
@@ -25,4 +26,6 @@
 <%= label :image_url, "Picture URL:" %>
 <%= f.text_field :image_url %>
   <%= f.submit %>
-<% end %>
+<% end %> -->
+
+<%= render 'form' %>

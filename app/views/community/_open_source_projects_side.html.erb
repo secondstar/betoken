@@ -2,11 +2,11 @@
 <select style="display: none;" 
 	class="chzn_select chzn-done" 
 	id="oos_project_url" name="oos_project_url">
-	<option selected="selected" value="http://intridea.github.com/stately/">Stately</option>
-	<option value="http://intridea.github.com/omniauth/">OmniAuth</option>
-	<option value="http://intridea.github.com/grape/">Grape</option>
-	<option value="https://github.com/intridea/tweetstream">TweetStream</option>
-	<option value="https://github.com/intridea/multi_json">Multi_json</option>
+	<option selected="selected" value="http://<%= @guest_setting.title %>.github.com/stately/">Stately</option>
+	<option value="http://<%= @guest_setting.title %>.github.com/omniauth/">OmniAuth</option>
+	<option value="http://<%= @guest_setting.title %>.github.com/grape/">Grape</option>
+	<option value="https://github.com/<%= @guest_setting.title %>/tweetstream">TweetStream</option>
+	<option value="https://github.com/<%= @guest_setting.title %>/multi_json">Multi_json</option>
 </select>
 <div style="width: 240px;" class="chzn-container chzn-container-single" id="oos_project_url_chzn">
 	<a href="javascript:void(0)" class="chzn-single">

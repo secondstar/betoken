@@ -40,7 +40,7 @@ gem "acts-as-taggable-on", "~> 2.4.1"
 gem "carrierwave", "~> 0.9.0"
 
 # store files on amazon s3
-gem "fog", "~> 1.16.0"
+gem "fog", "~> 1.16.0" # currently can't bundle w/o wifi
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.

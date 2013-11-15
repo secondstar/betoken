@@ -15,15 +15,15 @@
 <div class="main about-header masthead clearfix">
 	<div id="sub_nav">
   <ul class="visible-desktop nav clearfix">
-<li class="active"><a href="/about">About Intridea</a></li>
+<li class="active"><a href="/about">About <%= @guest_setting.title %></a></li>
     <li class=""><a href="/contact">Contact Us</a></li>
     <li class=""><a href="/careers">Careers</a></li>
     <!--<li><a href="#">Newsletter</a></li>-->
   </ul>
 <div class="visible-tablet styled-select">
-  	<select class="chzn_select tablet_subnav chzn-done" id="about_sub_nav_url" name="about_sub_nav_url" style="width: 160px; display: none;"><option value="/about" selected="selected">About Intridea</option>
+  	<select class="chzn_select tablet_subnav chzn-done" id="about_sub_nav_url" name="about_sub_nav_url" style="width: 160px; display: none;"><option value="/about" selected="selected">About <%= @guest_setting.title %></option>
 <option value="/contact">Contact Us</option>
-<option value="/careers">Careers</option></select><div style="width: 160px;" class="chzn-container chzn-container-single" id="about_sub_nav_url_chzn"><a href="javascript:void(0)" class="chzn-single"><span>About Intridea</span><div><b></b></div></a><div class="chzn-drop" style="left: -9000px; width: 160px; top: 0px;"><div style="" class="chzn-search"><input style="width: 125px;" autocomplete="off" type="text"></div><ul class="chzn-results"><li id="about_sub_nav_url_chzn_o_0" class="active-result result-selected" style="">About Intridea</li>
+<option value="/careers">Careers</option></select><div style="width: 160px;" class="chzn-container chzn-container-single" id="about_sub_nav_url_chzn"><a href="javascript:void(0)" class="chzn-single"><span>About <%= @guest_setting.title %></span><div><b></b></div></a><div class="chzn-drop" style="left: -9000px; width: 160px; top: 0px;"><div style="" class="chzn-search"><input style="width: 125px;" autocomplete="off" type="text"></div><ul class="chzn-results"><li id="about_sub_nav_url_chzn_o_0" class="active-result result-selected" style="">About <%= @guest_setting.title %></li>
 	<li id="about_sub_nav_url_chzn_o_2" class="active-result" style="">Board Members</li><li id="about_sub_nav_url_chzn_o_3" class="active-result" style="">Contact Us</li><li id="about_sub_nav_url_chzn_o_4" class="active-result" style="">Careers</li></ul></div></div>
 </div>
 </div>
@@ -35,8 +35,7 @@
 				<p>
 					We don't just make web apps - we solve problems. We 
 write intelligently designed software to help businesses develop 
-strategic solutions and launch new ideas. Equipped with bright 
-engineers and artful designers, and positioned at the forefront of the 
+strategic solutions and launch new ideas. Positioned at the forefront of the 
 technological ethos, we help businesses disrupt industries.
 				</p>
 				<a href="/contact" class="btn blue small">Get in Touch</a>
@@ -65,7 +64,7 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor 
 		<p>Obsessed with quality code and beautiful design? Do you value form as much as function? We do too. Apply today.</p>
 	</div>
 	<div class="span-1 visible-desktop in_benefits">
-		<h3>Benefits of Being an Intridean</h3>
+		<h3>Benefits of Being with <%= @guest_setting.title %></h3>
 		<ul class="dot intridea_benefits">
 <li>Flexible Work Schedule</li>
 			<li>Medical, Dental, and Vision Ins.</li>
@@ -82,28 +81,28 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor 
 <li class="clearfix">
   	
 				<img class="icn-services alignleft ror_development" src="/assets/icon_ror_development_2x.png"><div class="clearfix">
-  					<a href="http://intridea.theresumator.com/apply/vqtgzY/Ruby-On-Rails-Developer.htmlhttp://intridea.theresumator.com/apply/Ssec8n/User-Interface-Designers.htmlhttp://intridea.theresumator.com/apply/zfkELH/User-Interface-Developer.htmlhttp://intridea.theresumator.com/apply/r54Aq0/Operations-Manager.html">Ruby on Rails Developer</a>
+  					<a href="http://<%= @guest_setting.title %>.theresumator.com/apply/vqtgzY/Ruby-On-Rails-Developer.htmlhttp://<%= @guest_setting.title %>.theresumator.com/apply/Ssec8n/User-Interface-Designers.htmlhttp://<%= @guest_setting.title %>.theresumator.com/apply/zfkELH/User-Interface-Developer.htmlhttp://<%= @guest_setting.title %>.theresumator.com/apply/r54Aq0/Operations-Manager.html">Ruby on Rails Developer</a>
   					<span><strong>Location:</strong> Washington, DC, (Multiple states)</span>
   				</div>
   			</li>
   		  <li class="clearfix">
   	
 				<img class="icn-services alignleft ui_design" src="/assets/icon_user_interface_design_2x.png"><div class="clearfix">
-  					<a href="http://intridea.theresumator.com/apply/vqtgzY/Ruby-On-Rails-Developer.htmlhttp://intridea.theresumator.com/apply/Ssec8n/User-Interface-Designers.htmlhttp://intridea.theresumator.com/apply/zfkELH/User-Interface-Developer.htmlhttp://intridea.theresumator.com/apply/r54Aq0/Operations-Manager.html">User Interface Designers</a>
+  					<a href="http://<%= @guest_setting.title %>.theresumator.com/apply/vqtgzY/Ruby-On-Rails-Developer.htmlhttp://<%= @guest_setting.title %>.theresumator.com/apply/Ssec8n/User-Interface-Designers.htmlhttp://<%= @guest_setting.title %>.theresumator.com/apply/zfkELH/User-Interface-Developer.htmlhttp://<%= @guest_setting.title %>.theresumator.com/apply/r54Aq0/Operations-Manager.html">User Interface Designers</a>
   					<span><strong>Location:</strong> Washington, DC, (Multiple states)</span>
   				</div>
   			</li>
   		  <li class="clearfix">
   	
 				<img class="icn-services alignleft ui_design" src="/assets/icon_user_interface_design_2x.png"><div class="clearfix">
-  					<a href="http://intridea.theresumator.com/apply/vqtgzY/Ruby-On-Rails-Developer.htmlhttp://intridea.theresumator.com/apply/Ssec8n/User-Interface-Designers.htmlhttp://intridea.theresumator.com/apply/zfkELH/User-Interface-Developer.htmlhttp://intridea.theresumator.com/apply/r54Aq0/Operations-Manager.html">User Interface Developer</a>
+  					<a href="http://<%= @guest_setting.title %>.theresumator.com/apply/vqtgzY/Ruby-On-Rails-Developer.htmlhttp://<%= @guest_setting.title %>.theresumator.com/apply/Ssec8n/User-Interface-Designers.htmlhttp://<%= @guest_setting.title %>.theresumator.com/apply/zfkELH/User-Interface-Developer.htmlhttp://<%= @guest_setting.title %>.theresumator.com/apply/r54Aq0/Operations-Manager.html">User Interface Developer</a>
   					<span><strong>Location:</strong> Washington, DC, (Multiple states)</span>
   				</div>
   			</li>
   		  <li class="clearfix">
   	
 				<img class="icn-services alignleft ui_design" src="/assets/icon_user_interface_design_2x.png"><div class="clearfix">
-  					<a href="http://intridea.theresumator.com/apply/vqtgzY/Ruby-On-Rails-Developer.htmlhttp://intridea.theresumator.com/apply/Ssec8n/User-Interface-Designers.htmlhttp://intridea.theresumator.com/apply/zfkELH/User-Interface-Developer.htmlhttp://intridea.theresumator.com/apply/r54Aq0/Operations-Manager.html">Operations Manager</a>
+  					<a href="http://<%= @guest_setting.title %>.theresumator.com/apply/vqtgzY/Ruby-On-Rails-Developer.htmlhttp://<%= @guest_setting.title %>.theresumator.com/apply/Ssec8n/User-Interface-Designers.htmlhttp://<%= @guest_setting.title %>.theresumator.com/apply/zfkELH/User-Interface-Developer.htmlhttp://<%= @guest_setting.title %>.theresumator.com/apply/r54Aq0/Operations-Manager.html">Operations Manager</a>
   					<span><strong>Location:</strong> Washington, DC, (Multiple states)</span>
   				</div>
   			</li>

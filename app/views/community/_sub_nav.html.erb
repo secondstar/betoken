@@ -1,6 +1,6 @@
 <div id="sub_nav">
   <ul class="visible-desktop nav clearfix">
-	<li class="active"><a href="/community">Intridea Community</a></li>
+	<li class="active"><a href="/community"><%= @guest_setting.title %> Community</a></li>
     <li class=""><a href="/community/events">Events</a></li>
     <li class=""><a href="/community/opensource">OSS Projects</a></li>
   </ul>
@@ -9,7 +9,7 @@
 			id="community_sub_nav_url" 
 			name="community_sub_nav_url" 
 			style="width: 160px; display: none;">
-			<option value="/community" selected="selected">Intridea Community</option>
+			<option value="/community" selected="selected"><%= @guest_setting.title %> Community</option>
 			<option value="/community/events">Events</option>
 			<option value="/community/opensource">OSS Projects</option>
 		</select>
@@ -17,7 +17,7 @@
 			class="chzn-container chzn-container-single" 
 			id="community_sub_nav_url_chzn">
 			<a href="javascript:void(0)" class="chzn-single">
-				<span>Intridea Community</span>
+				<span><%= @guest_setting.title %> Community</span>
 				<div><b></b></div>
 			</a>
 			<div class="chzn-drop" style="left: -9000px; width: 160px; top: 0px;">
@@ -27,7 +27,7 @@
 				<ul class="chzn-results">
 					<li id="community_sub_nav_url_chzn_o_0" 
 						class="active-result result-selected" style="">
-						Intridea Community
+						<%= @guest_setting.title %> Community
 					</li>
 					<li id="community_sub_nav_url_chzn_o_1" class="active-result" style="">Events</li>
 					<li id="community_sub_nav_url_chzn_o_2" class="active-result" style="">OSS Projects</li>

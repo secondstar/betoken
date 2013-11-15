@@ -2,18 +2,18 @@
 <div class="main contact-phone visible-phone clearfix">
 	<ul>
 		<li>Phone: <a href="tel:18889684332">1-888-968-IDEA</a></li>
-		<li>Email: <a href="mailto:info@intridea.com">info@intridea.com</a></li>
-		<li>Twitter: <a href="http://www.twitter.com/intridea">@Intridea</a></li>
+		<li>Email: <a href="mailto:<%= @guest_setting.title %>"><%= @guest_setting.email %></a></li>
+		<li>Twitter: <a href="http://www.twitter.com/<%= @guest_setting.title %>">@<%= @guest_setting.title %></a></li>
 	</ul>
 	
 	<ul class="social cf">
         <li>
-          <a class="facebook" href="http://facebook.com/intridea" title="Intridea on Facebook" target="_blank">Facebook</a> </li>
+          <a class="facebook" href="http://facebook.com/<%= @guest_setting.facebook %>" title="<%= @guest_setting.title %> on Facebook" target="_blank">Facebook</a> </li>
         <li>
-          <a class="twitter" href="http://twitter.com/intridea" title="Intridea on Twitter" target="_blank">Twitter</a>
+          <a class="twitter" href="http://twitter.com/<%= @guest_setting.twitter %>" title="<%= @guest_setting.title %> on Twitter" target="_blank">Twitter</a>
         </li>
         <li>
-          <a class="linkedin" href="http://www.linkedin.com/company/intridea-inc" title="Intridea on Linkedin" target="_blank">Linkedin</a>
+          <a class="linkedin" href="http://www.linkedin.com/company/<%= @guest_setting.linkedin %>" title="<%= @guest_setting.title %> on Linkedin" target="_blank">Linkedin</a>
         </li>
         <li>
           <a class="email" href="/about/newsletter" title="Join the Intridea Newsletter">Newsletter</a>
