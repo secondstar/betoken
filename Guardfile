@@ -23,7 +23,7 @@ guard 'minitest' do
 	  watch(%r|^spec/spec_helper.*\.rb|)    { "spec" }
 end
 
-guard 'passenger' do
+guard 'passenger',:cli => '--daemonize --port 3000', :notification => true do
   watch(/^lib\/.*\.rb$/)
   watch(/^config\/.*\.rb$/)
 end

@@ -3,6 +3,9 @@ class Project < ActiveRecord::Base
 
   # attr_accessible :title, :body, :image_url, :pubdate
 
+  # Carrierwave uploader
+  mount_uploader :image, ImageUploader
+
   attr_accessor :portfolio
 
   def self.most_recent(limit=21)

@@ -44,7 +44,7 @@ class GuestSetting
    end
    
    def github_id
-    secondstar
+    "secondstar"
    end
    
    def url
