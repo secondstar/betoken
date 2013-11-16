@@ -16,8 +16,8 @@
   <%= f.text_area :body %>
   <%# label :tags, "Tags:" %>
   <%# f.text_field :tags %>
-  <%=label :image, "Upload Picture:" %>
-  <%= f.file_field :image %><br />
+	<p> <%= f.file_field :image %><br />
+		<%= f.text_field :image_url, :placeholder  => "http://example.org/king_lear.jpg", :size => "66" %>
 
   <%#label :remote_image_url, "or Remote Picture URL:" %>
   <%# f.text_field :remote_image_url # ERROR: Can't verify CSRF token authenticity %><br />
