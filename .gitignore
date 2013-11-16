@@ -43,3 +43,6 @@ app/assets/javascripts/*scaffold*
 
 # uploads created during development
 public/uploads
+
+# development environment
+.env
