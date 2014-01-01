@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131116162853) do
+ActiveRecord::Schema.define(version: 20140101222956) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -60,6 +60,8 @@ ActiveRecord::Schema.define(version: 20131116162853) do
     t.string   "category"
     t.text     "summary_image_url"
     t.text     "main_image_url"
+    t.boolean  "is_community"
+    t.boolean  "is_open_source"
   end
 
 end

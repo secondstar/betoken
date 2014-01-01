@@ -11,6 +11,10 @@ class Project < ActiveRecord::Base
   def self.most_recent(limit=21)
     order(pubdate: :desc).limit(limit)
   end
+
+  def self.open_source(limit=4)
+    order(pubdate: :desc).where(:is_open_source => true).limit(limit)
+  end
   
   def picture?
     image_url.present?

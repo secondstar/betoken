@@ -16,18 +16,5 @@
   		      	<p>A flexible authentication system utilizing Rack middleware. </p>
   		    	</div>
   		  	</div>
-    <div class="portfolio_item alpha marg-norm">
-  		    	<a href="http://<%= @guest_setting.title %>.github.com/grape/"><img alt="Medium" src="/assets/grape.png"></a>
-  		    	<div class="item_desc">
-  		    		<h4><strong>Grape</strong></h4>
-  		      	<p>An opinionated micro-framework for creating REST-like APIs in Ruby</p>
-  		    	</div>
-  		  	</div>
-    <div class="portfolio_item omega marg-norm">
-  		    	<a href="https://github.com/<%= @guest_setting.title %>/tweetstream"><img alt="Medium" src="/assets/tweetstream.png"></a>
-  		    	<div class="item_desc">
-  		    		<h4><strong>TweetStream</strong></h4>
-  		      	<p>A RubyGem to access the Twitter Streaming API</p>
-  		    	</div>
-  		  	</div>
+			<%= render :partial => "open_source_project", :collection => @open_source_projects %>
 </div> 
