@@ -1,10 +1,11 @@
 <section class="blog home clearfix"><div class="main_column blog_wrapper">
   <hgroup class="visible-phone">
 		<a href="/contact" class="btn blue">Get in Touch</a>
-  </hgroup><div id="posts">
-    <div id="post_items">
+  </hgroup>
+  <div id="posts">
+  <div id="post_items">
 		<%= render :partial => "entry", :collection => @blog.entries %>
-  	</div>
+  </div>
     
   	<!-- <div class="visible-desktop">
   	      <div class="paginator">

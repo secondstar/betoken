@@ -12,7 +12,7 @@
 		</div>
 
 	  <article class="body clearfix"><div class="blog-img">
-	        <a href="/blog/2013/8/20/see-you-in-madison"><%= image_tag entry.image_url.to_s, :title => "medium" %></a>
+			<%= link_to image_tag(entry.image_url.to_s, :title => "title", :class => "class"), post_path(entry) %>
 	      </div>
 
 	    <div class="blog-content">
