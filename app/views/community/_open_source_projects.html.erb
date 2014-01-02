@@ -3,18 +3,25 @@
 <strong>Open Source Projects</strong> We give back</h2>										
 <div id="portfolio_bar" class="main clearfix">
     <div class="portfolio_item alpha ">
-  		    	<a href="http://<%= @guest_setting.title %>.github.com/stately/"><img alt="Medium" src="/assets/stately.png"></a>
-  		    	<div class="item_desc">
-  		    		<h4><strong>Stately</strong></h4>
-  		      	<p>A web font for making simple maps using HTML and CSS.</p>
-  		    	</div>
-  		  	</div>
+		<% @first_open_source_project =  Array(@open_source_projects[0])%>
+		<% @first_open_source_project.each do |project| %>
+			<%= link_to image_tag(project.logo_url, :title => project.title), project_path(project) %>
+			<div class="item_desc">
+				<h4><strong><%= project.title %></strong></h4>
+				<p><%= project.slogan %></p>
+			</div>
+		<% end %>
+			
+  	</div>
     <div class="portfolio_item omega ">
-  		    	<a href="http://<%= @guest_setting.title %>.github.com/omniauth/"><img alt="Medium" src="/assets/omniauth.png"></a>
-  		    	<div class="item_desc">
-  		    		<h4><strong>OmniAuth</strong></h4>
-  		      	<p>A flexible authentication system utilizing Rack middleware. </p>
-  		    	</div>
-  		  	</div>
-			<%= render :partial => "open_source_project", :collection => @open_source_projects %>
+		<% @second_open_source_project =  Array(@open_source_projects[1])%>
+		<% @second_open_source_project.each do |project| %>
+			<%= link_to image_tag(project.logo_url, :title => project.title), project_path(project) %>
+			<div class="item_desc">
+				<h4><strong><%= project.title %></strong></h4>
+				<p><%= project.slogan %></p>
+			</div>
+		<% end %>
+  	</div>
+			<%= render :partial => "open_source_project", :collection => @open_source_projects[2..3] %>
 </div> 
