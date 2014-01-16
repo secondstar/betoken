@@ -16,7 +16,7 @@
     <div class="portfolio_item omega ">
 		<% @second_open_source_project =  Array(@open_source_projects[1])%>
 		<% @second_open_source_project.each do |project| %>
-			<%= link_to image_tag(project.logo_url, :title => project.title), project_path(project) %>
+				<%= link_to image_tag(project.logo_url, :title => project.title), project_path(project) %>
 			<div class="item_desc">
 				<h4><strong><%= project.title %></strong></h4>
 				<p><%= project.slogan %></p>
