@@ -9,7 +9,7 @@
 		
 		<h2 class="blog_title"><%= link_to @post.title, @post_path %></h2>
 	  <p class="meta">
-	  	<span class="author">By <a href="/about/team/robert-dempsey">Robert Dempsey</a>,&nbsp;</span> 
+	  	<span class="author">By <%= link_to "#{@post.teammate.first_name}", teammate_path(@teammate) %>,&nbsp;</span> 
 	  	<span class="date"><%= @post.pubdate.strftime("%A, %B %d, %Y")  %></span> in 
 	  	<span class="tags"><a href="/blog/tag/events">events</a></span>
 	  </p>
@@ -48,7 +48,7 @@
 		<div class="author clearfix hidden-phone">
 			<%= image_tag "medium_002.png", :title => "medium", :class => "auth_photo" %>
 			<div class="auth-bio alignleft">
-				<h4>Robert Dempsey</h4>
+				<h4><%= @post.teammate.first_name %> <%= @post.teammate.last_name %></h4>
 				<p>Leaving a culinary career behind for a career in tech, Robert has
  more than 14 years experience building businesses, developing web 
 applications, conducting conferences, and generally geeking out with a 

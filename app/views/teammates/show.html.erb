@@ -1,0 +1,23 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+	<strong>Mugshot</strong><br />
+	<%= image_tag @teammate.image_url.to_s, :width => '100' %>
+</p>
+<p>
+  <strong>First name:</strong>
+  <%= @teammate.first_name %>
+</p>
+
+<p>
+  <strong>Last name:</strong>
+  <%= @teammate.last_name %>
+</p>
+
+<p>
+  <strong>Biography:</strong>
+  <%= @teammate.biography %>
+</p>
+
+<%= link_to 'Edit', edit_teammate_path(@teammate) %> |
+<%= link_to 'Back', teammates_path %>

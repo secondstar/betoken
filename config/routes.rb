@@ -1,4 +1,6 @@
 Represent::Application.routes.draw do
+  resources :teammates
+
   resources :example_scaffolds
   resources :contacts
 

@@ -2,6 +2,7 @@ class Post < ActiveRecord::Base
 include ActiveModel::Validations
 validates :title, presence: true
 
+belongs_to :teammate
 # Carrierwave uploader
 mount_uploader :image, ImageUploader
 
@@ -25,6 +26,7 @@ mount_uploader :image, ImageUploader
   def publish(clock=DateTime)
     return false unless valid?
     self.pubdate = clock.now
+    self.teammmate_id = Teammate.first.id.to_i
     @blog.add_entry(self)
   end
 end
